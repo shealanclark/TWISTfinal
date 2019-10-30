@@ -1,3 +1,6 @@
 .pagetitle{
-    content:url(.//
+    background-image:url("pictures/TwistLogo.jpg");
+    width: 60%;
+    height: 200px;
+    background-repeat: no-repeat;
 }
