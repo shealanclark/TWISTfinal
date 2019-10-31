@@ -1,6 +1,73 @@
 .pagetitle{
     background-image:url("pictures/TwistLogo.jpg");
-    width: 60%;
+    width: 100%;
     height: 200px;
     background-repeat: no-repeat;
+}
+
+.sign_in_bar{
+    text-align: center;
+    background-color: #000;
+    overflow: hidden;
+    display: block;
+}
+
+.sign_in_bar a{
+    float: right;
+    background-color: #000;
+    color: #FFF;
+    padding: 15px 20px;
+}
+
+.sign_in_bar a:hover{
+	background-color: #DDD;
+	color: #000;
+}
+
+.descpara{
+    background-color: #FFF;
+    margin-top: 25px;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    font-family: Georgia, Verdana, serif;
+}
+
+.registerbutton{
+    font-family: Georgia, Verdana, serif;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.registerbutton a{
+    background-color: #2a9da4;
+    padding: 15px 40px;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.registerbutton a:hover{
+    background-color: #BBB;
+    color: #000;
+}
+
+#black{
+    background-color: #000;
+}
+
+h1{
+    font-family: Georgia, Verdana, serif;
+    text-align: center;
+}
+
+input[type=text]{
+    padding: 6px 20px;
+    margin-bottom: 10px;
+}
+
+input[type=email]{
+    padding: 6px 20px;
+    margin-bottom: 10px;
 }
