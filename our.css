@@ -31,6 +31,18 @@
 	color: #000;
 }
 
+.caro_p {
+    background-color: #FFF;
+    margin-top: 25px;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    font-family: Georgia, Verdana, serif;
+    text-align: left;
+    font-size: 20px;
+}
+
 .descpara{
     background-color: #FFF;
     margin-top: 25px;
@@ -40,6 +52,7 @@
     padding-top: 10px;
     font-family: Georgia, Verdana, serif;
     text-align: left;
+    font-size: 20px;
 }
 
 .registerbutton{
