@@ -31,16 +31,25 @@
 	color: #000;
 }
 
-.caro_p {
-    background-color: #FFF;
+.caro_p{
+    display: block;
+}
+
+.caro_p .carousel{
+    background-color: #AAA;
+    width: 300px;
+    height: 300px;
+    float: left;
+}
+
+.caro_p  .content{
     margin-top: 25px;
-    padding-left: 12%;
-    padding-right: 12%;
-    padding-bottom: 30px;
-    padding-top: 10px;
+    background-color: #FFF;
     font-family: Georgia, Verdana, serif;
-    text-align: left;
+    text-align: center;
     font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
 }
 
 .descpara{
