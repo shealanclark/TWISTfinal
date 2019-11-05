@@ -82,6 +82,12 @@ form p label{
     display: table-cell;
 }
 
+form p select{
+    display: table-cell;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
 input{
     display: table-cell;
 }
@@ -93,13 +99,13 @@ input[type=radio]{
 input[type=text]{
     margin-left: 20px;
     margin-right: 20px;
-    padding: 6px 20px;
+    padding: 1px 20px;
     margin-bottom: 10px;
 }
 
 input[type=email]{
     margin-left: 20px;
     margin-right: 20px;
-    padding: 6px 20px;
+    padding: 1px 20px;
     margin-bottom: 10px;
 }
