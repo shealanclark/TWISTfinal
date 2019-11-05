@@ -70,12 +70,36 @@ h1{
     text-align: center;
 }
 
+form {
+    display: table;
+}
+
+form p{
+    display: table-row;
+}
+
+form p label{
+    display: table-cell;
+}
+
+input{
+    display: table-cell;
+}
+
+input[type=radio]{
+    display: table-cell;
+}
+
 input[type=text]{
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 6px 20px;
     margin-bottom: 10px;
 }
 
 input[type=email]{
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 6px 20px;
     margin-bottom: 10px;
 }
