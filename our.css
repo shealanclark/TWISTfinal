@@ -109,6 +109,10 @@
     background-color: #000;
 }
 
+#blue{
+  background-color: #2a9da4;
+}
+
 h1{
     font-family: Georgia, Verdana, serif;
     text-align: center;
@@ -189,4 +193,10 @@ div {
   border-radius: 5px;
   background-color: #2a9da4;
   padding: 20px;
+}
+
+.form_container{
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
 }
