@@ -114,8 +114,17 @@ h1{
     text-align: center;
 }
 
+h2{
+    font-family: Georgia, Verdana, serif;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+
+
 form {
     display: table;
+    font-family: Arial, Verdana, sans-serif;
 }
 
 form p{
@@ -124,12 +133,18 @@ form p{
 
 form p label{
     display: table-cell;
+    font-family: Arial, Verdana, sans-serif;
 }
 
 form p select{
     display: table-cell;
-    margin-left: 20px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;    
 }
 
 input{
@@ -141,15 +156,37 @@ input[type=radio]{
 }
 
 input[type=text]{
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 1px 20px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 input[type=email]{
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 1px 20px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #2a9da4;
+  padding: 20px;
 }
