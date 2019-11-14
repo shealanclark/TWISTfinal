@@ -116,6 +116,10 @@
   background-color: #2a9da4;
 }
 
+.fill{
+  padding-bottom: 423px;
+}
+
 h2{
     font-family: Georgia, Verdana, serif;
     text-align: center;
@@ -161,11 +165,23 @@ input[type=text]{
 input[type=password]{
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin-left: auto;
+    margin-right: auto;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+#user{
+  width: 100%;
+  padding: 12px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 input[type=email]{
