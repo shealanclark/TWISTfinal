@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var HighschoolSchema = new Schema(
   {
-    highschoolId: {type: Number, required: true};
+    highschoolId: {type: Schema.Types.ObjectId, required: true};
     name: {type: String, required: true},
     counselor: {type: String, required: true},
     counselorEmail: {type: String},

@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var PeopleSchema = new Schema(
   {
-    personId: {type: Number, required: true},
+    personId: {type: Schema.Types.ObjectId, required: true},
     lastName: {type: String, required: true},
     role: {type: String, required: true},
     topic1: {type: Schema.Types.ObjectId, ref: 'perSessionInfo', required: true},

@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var SpeakerSchema = new Schema(
   {
-    speakerId: {type: Number, required: true},
+    speakerId: {type: Schema.Types.ObjectId, required: true},
     speakerName: {type: String, required: true},
     email: {type: String, required: true},
     phone: {type: String, required: true}

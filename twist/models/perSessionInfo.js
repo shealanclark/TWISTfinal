@@ -4,13 +4,13 @@ var Schema = mongoose.Schema;
 
 var PerSessionSchema = new Schema(
   {
-    sessionId: {type: Number, required: true},
+    sessionId: {type: Schema.Types.ObjectId, required: true},
     time: {type: Date, required: true},
-    roomNumber: {type: Schema.Types.ObjectId, ref: 'roomReferenceTable', required: true},
+    roomNumber: {type: String, ref: 'roomReferenceTable', required: true},
     topicId: {type: Schema.Types.ObjectId, ref: 'topicReferenceTable', required: true},
-    speakerID: {type: Schema.Types.ObjectId, ref: 'speaker', required: true},
+    speakerId: {type: Schema.Types.ObjectId, ref: 'speaker', required: true},
     blockId: {type: Schema.Types.ObjectId, ref: 'blockReferenceTable', required: true},
-    participants: {type: Schema.Types.ObjectId, ref: '', required: true}
+    participants: {type: Schema.Types.ObjectId, ref: 'people', required: true}
   }
 );
 

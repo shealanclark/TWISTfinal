@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var BlockReferenceSchema = new Schema(
   {
-    blockId: {type: Number, required: true},
+    blockId: {type: Schema.Types.ObjectId, required: true},
     blockStart: {type: Date, required: true},
     blockEnd: {type: Date, required: true}
   }

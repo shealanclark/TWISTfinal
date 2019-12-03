@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var RoomReferenceSchema = new Schema(
   {
     roomNumber: {type: String, required: true},
-    capacity: {type: Number, required: true}
+    capacity: {type: Schema.Types.Int32, required: true}
   }
 );
 
