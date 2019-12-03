@@ -8,6 +8,11 @@ router.get('/login', function(req, res, next) {
 
 // POST login
 router.post('/login', function(req, res, next){
+  res.redirect('/dashboard');
+});
+
+// GET dashboard
+router.get('/dashboard', function(req, res, next){
   res.render('dashboard/dashboard');
 });
 
