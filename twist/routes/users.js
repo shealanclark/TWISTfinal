@@ -3,17 +3,23 @@ var router = express.Router();
 
 // GET home
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'Twist Home'});
+  res.render('index');
 });
 
 // GET register
 router.get('/register', function(req, res, next){
-  res.render('register/register', {title: 'Register Page'});
+  res.render('register/register');
 });
 
 //POST register
 router.post('/register', function(req, res, next){
-  res.render('confirmation/confirmation', {title: 'Confirmation Page'});
+  res.redirect('/confirmation');
+});
+
+//The redirect sends a GET for /confirmation. Route below handles GET
+//GET confirmation
+router.get('/confirmation', function(req, res, next){
+  res.render('confirmation/confirmation');
 });
 
 module.exports = router;
