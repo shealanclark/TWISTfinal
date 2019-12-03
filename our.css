@@ -116,6 +116,20 @@
   background-color: #2a9da4;
 }
 
+#whiteMax{
+  background-color: #FFF;
+  height: 100%;
+}
+
+#blueMax{
+  background-color: #2a9da4;
+  height: 100%;
+}
+
+#white{
+  background-color: #FFF;
+}
+
 .fill{
   padding-bottom: 423px;
 }
@@ -125,6 +139,7 @@ h2{
     text-align: center;
     border-bottom: 2px solid black;
     padding-bottom: 5px;
+    background-color: #FFF;
 }
 
 
