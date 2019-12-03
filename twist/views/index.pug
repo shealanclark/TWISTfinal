@@ -1,5 +1,29 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+head
+  link(href='stylesheets/our.css' rel='stylesheet')
+  meta(charset='utf-8')
+  meta(name='keywords' content='Twist, Women, Technology, Aviaiton, Engineering, Science')
+  meta(name='description' content='Twist website')
+  meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+.sign_in_bar
+  a(href='login') Log in
+  a(href='register') Register
+.pagetitle
+  img(src='/images/TwistLogo.jpg' alt='Twist Logo')
+.descpara
+  .carousel
+    img.mySlides(src='images/1.jpg')
+    img.mySlides(src='images/2.jpg')
+    img.mySlides(src='images/3.jpg')
+    img.mySlides(src='images/4.jpg')
+    img.mySlides(src='images/5.jpg')
+    button.left(onclick='plusDivs(-1)') Previous
+    button.right(onclick='plusDivs(1)') Next
+  .desctitle
+    h1 Description
+  p
+    | TWIST is a chance for women in high school to come and meet important female figures in different STEM industries. More description here, but not too much as a description should be brief.
+  .registerbutton
+    a(href='/register') REGISTER
+script(src='javascripts/carousel.js')
