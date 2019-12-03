@@ -8,7 +8,7 @@ router.get('/login', function(req, res, next) {
 
 // POST login
 router.post('/login', function(req, res, next){
-  res.redirect('dashboard', isLoggedIn, {title: 'Admin Dashboard');
+  res.redirect('dashboard', isLoggedIn, {title: 'Admin Dashboard'});
 });
 
 module.exports = router;
