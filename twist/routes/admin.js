@@ -81,4 +81,13 @@ router.get('/dashboard/print-schedule', function(req, res, next){
   res.render('dashboard/print-schedule/print-schedule');
 });
 
+//GET add-speaker
+router.get('/dashboard/add-speaker', function (req, res, next){
+  res.render('/dashboard/add-speaker/add-speaker');
+});
+
+//POST add-speaker
+router.post('/dashboard/add-speaker', function (req, res, next){
+  res.redirect('/dashboard');
+});
 module.exports = router;
