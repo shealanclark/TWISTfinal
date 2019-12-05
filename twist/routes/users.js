@@ -19,7 +19,7 @@ router.post('/register', function(req, res, next){
 //The redirect sends a GET for /confirmation. Route below handles GET
 //GET confirmation
 router.get('/confirmation', function(req, res, next){
-  res.render('confirmation/confirmation');
+  res.render('register/confirmation/confirmation');
 });
 
 module.exports = router;
