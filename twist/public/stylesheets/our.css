@@ -10,10 +10,12 @@
     margin-right: auto;
     width: 100%;
     background-color: #2a9da4;
+    border-bottom: 10px solid black;
 }
 
 .sign_in_bar{
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #000;
     overflow: hidden;
     display: block;
@@ -24,6 +26,8 @@
     background-color: #000;
     color: #FFF;
     padding: 15px 20px;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .sign_in_bar a:hover{
@@ -45,7 +49,7 @@
     background-color: #FFF;
     margin-top: 25px;
     padding-left: 2%;
-    font-family: Georgia, Verdana, serif;
+    font-family: Arial, Verdana, sans-serif;
     text-align: left;
     font-size: 25px;
     padding-bottom: 45px;
@@ -53,8 +57,8 @@
 
 .descpara .desctitle{
   width: 30%;
-  float: left;
-  text-align: left;
+  
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -64,22 +68,26 @@
 .descpara p{
   display: inline-block;
   width: 70%;
-  text-align: left;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
 .registerbutton{
-  font-family: Georgia, Verdana, serif;
+  font-family: Arial, Verdana, sans-serif;
   text-align: center;
 }
 
 .registerbutton a{
   background-color: #2a9da4;
-  padding: 15px 40px;
+  padding: 20px 45px;
   color: #FFF;
   text-decoration: none;
   font-size: 26px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .registerbutton a:hover{
@@ -98,6 +106,7 @@
   height: 20px;
   background-color: #2a9da4;
   color: white;
+
 }
 
 .right{
@@ -112,8 +121,11 @@
   background-color: #000;
 }
 
-#blue{
-  background-color: #2a9da4;
+#regForm{
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  width: 75%;
+  
 }
 
 #whiteMax{
@@ -135,9 +147,9 @@
 }
 
 h2{
-    font-family: Georgia, Verdana, serif;
+    font-family: Arial, Verdana, sans-serif;
     text-align: center;
-    border-bottom: 2px solid black;
+    border-bottom: 8px solid black;
     padding-bottom: 5px;
     background-color: #FFF;
 }
