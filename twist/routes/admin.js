@@ -83,17 +83,17 @@ router.get('/dashboard/print-schedule', function(req, res, next){
 
 //GET add-speaker
 router.get('/dashboard/add-speaker', function (req, res, next){
-  res.render('/dashboard/add-speaker/add-speaker');
+  res.render('dashboard/add-speaker/add-speaker');
 });
 
 //POST add-speaker
 router.post('/dashboard/add-speaker', function (req, res, next){
-  res.redirect('/dashboard');
+  res.redirect('dashboard');
 });
 
 //GET add-schedule
 router.get('/dashboard/add-schedule', function (req, res, next){
-  res.render('/dashboard/add-schedule/add-schedule');
+  res.render('dashboard/add-schedule/add-schedule');
 });
 
 //POST add-schedule

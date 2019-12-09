@@ -1,0 +1,37 @@
+doctype html
+head
+  link(href='../../stylesheets/our.css' rel='stylesheet')
+  meta(charset='utf-8')
+  meta(name='keywords' content='Twist, Women, Technology, Aviaiton, Engineering, Science')
+  meta(name='description' content='Twist website')
+  meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+h2 Add Speaker
+div
+  .form_container
+    form(method='POST' action='')
+      label(for='fName') First Name:
+      br
+      input#fName(type='text' name='fName' required='')
+      br
+      br
+      br
+      label(for='lName') Last Name:
+      br
+      input#lName(type='text' name='lName' required='')
+      br
+      br
+      br
+      label(for='email') Email:
+      br
+      input#email(type='email' name='email' required='')
+      br
+      br
+      br
+      label(for='phone') Phone:
+      br
+      input#phone(type='text' name='phone' required='')
+      br
+      br
+      br
+      input(type='submit')
