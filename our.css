@@ -328,8 +328,8 @@ input[type=email]{
   display: none;
   position: absolute; /*Try relative when asking for help*/
   background-color: #aaa;
-  z-index: 1;
   width: 100%;
+  right: .1px;
 }
 
 .dropdown_content a{
