@@ -90,4 +90,25 @@ router.get('/dashboard/add-speaker', function (req, res, next){
 router.post('/dashboard/add-speaker', function (req, res, next){
   res.redirect('/dashboard');
 });
+
+//GET add-schedule
+router.get('/dashboard/add-schedule', function (req, res, next){
+  res.render('/dashboard/add-schedule/add-schedule');
+});
+
+//POST add-schedule
+router.post('/dashboard/add-schedule', function (req, res, next){
+  res.redirect('/dashboard');
+});
+
+//GET edit-schedule
+router.get('/dashboard/edit-schedule', function (req, res, next){
+  res.render('/dashboard/edit-schedule/edit-schedule');
+});
+
+//POST edit-schedule
+router.post('/dashboard/edit-schedule', function (req, res, next){
+  res.redirect('/dashboard');
+});
+
 module.exports = router;
