@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+let attendee=require('../controllers/attendee')
 
 // GET home
 router.get('/', function(req, res, next) {
@@ -7,19 +8,16 @@ router.get('/', function(req, res, next) {
 });
 
 // GET register
-router.get('/register', function(req, res, next){
-  res.render('register/register');
-});
+router.get('/register',attendee.show_register)
 
 //POST register
-router.post('/register', function(req, res, next){
-  res.redirect('/confirmation');
-});
+router.post('/register',attendee.new_attendee)
+//router.post('/register', function(req, res, next){
+//  res.redirect('/confirmation');
+//});
 
 //The redirect sends a GET for /confirmation. Route below handles GET
 //GET confirmation
-router.get('/confirmation', function(req, res, next){
-  res.render('register/confirmation/confirmation');
-});
+router.get('/confirmation',attendee.show_confirmation)
 
 module.exports = router;
