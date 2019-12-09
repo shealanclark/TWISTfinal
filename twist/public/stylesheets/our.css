@@ -326,10 +326,11 @@ input[type=email]{
 
 .dropdown_content{
   display: none;
-  position: absolute; /*Try relative when asking for help*/
+  position: absolute;
   background-color: #aaa;
   width: 100%;
   right: .1px;
+  margin-top: 12px;
 }
 
 .dropdown_content a{
