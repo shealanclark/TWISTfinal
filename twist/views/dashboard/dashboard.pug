@@ -1,15 +1,31 @@
 doctype html
 head
-  link(href='stylesheets/our.css' rel='stylesheet')
+  link(href='our.css' rel='stylesheet')
   meta(charset='utf-8')
   meta(name='keywords' content='Twist, Women, Technology, Aviaiton, Engineering, Science')
   meta(name='description' content='Twist website')
   meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
 .navbar
-  div 1
-  div 2
-  div 3
-  div 4
+  .dropdown
+    | Speakers
+    .dropdown_content
+      a(href='dashboard/add-speaker/add-speaker') Add Speaker
+      a(href='dashboard/edit-speaker/edit-speaker') Edit Speaker
+  .dropdown
+    | Schedule
+    .dropdown_content
+      a(href='dashboard/add-schedule/add-schedule') Add Schedule
+      a(href='dashboard/edit-schedule/edit-schedule') Edit Schedule
+  .dropdown
+    | Rooms
+    .dropdown_content
+      a(href='dashboard/add-room/add-room') Add Room
+      a(href='dashboard/edit-room/edit-room') Edit Room
+  .dropdown
+    | Attendees
+    .dropdown_content
+      a(href='dashboard/add-attendee/add-attendee') Add Attendee
+      a(href='dashboard/edit-attendee/edit-attendee') Edit Attendee
 #schedule
 input(type='button' value='Add Session' onclick="window.location.href = '/dashboard/create-session'")
