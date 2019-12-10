@@ -1,4 +1,5 @@
 let models=require('../models/people');
+const {sanitizeBody}=require('express-validator/filter');
 
 exports.show_register=function(req,res,next){
     res.render('register/register')
@@ -12,7 +13,7 @@ exports.new_attendee=[
     sanitizeBody('address').escape(),
     sanitizeBody('city').escape(),
     sanitizeBody('state').escape(),
-    sanitizeBody('zip').escape()
+    sanitizeBody('zip').escape(),
     (req,res,next)=>{
     const newPerson=models.people.build({
         firstName:req.body.firstName,
@@ -32,7 +33,7 @@ exports.new_attendee=[
         zip:req.body.zip
     })//not right
     newPerson.save(function(err){
-        if (err {return next(err);}
+        if (err) {return next(err);}
         res.redirect(show_confirmation);
     });
     }
