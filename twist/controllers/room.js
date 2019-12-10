@@ -8,8 +8,8 @@ exports.addRoomPost = [
     const errors = validator.validationResult(req);
     //Create a room
     var room = new Room(
-      {name: req.body.roomName},
-      {capacity: req.body.capacity}
+      {name: req.body.roomName,
+      capacity: req.body.capacity}
     );
     
     if (!errors.isEmpty()){
@@ -19,19 +19,18 @@ exports.addRoomPost = [
     }
     else{
       Room.findOne({ 'roomName': req.body.roomName}) //Checks to see if room is already created
-        .exec( function(err, foundRoom)){
+        .exec( function(err, foundRoom){
           if (err) {return next(err);}
           //Found one
           if (foundRoom){
             res.render('dashboard/add-room/add-room', {roomName: room.name, capacity: room.capacity, exists: 'Room Already Exists'});
           }
           else{
-            room.save(function(err)){
+            room.save(function(err){
               if (err){ return next(err);}
-              
-            }
+            });
           }
-        }
+        });
     }
   }
 ]

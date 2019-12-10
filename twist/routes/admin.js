@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let room = ('../controllers/room');
+
 // GET login
 router.get('/login', function(req, res, next) {
   res.render('login/login', {title: 'Login'});
@@ -112,3 +113,4 @@ router.post('/dashboard/edit-schedule', function (req, res, next){
   res.redirect('/dashboard');
 });
 
+module.exports=router;
