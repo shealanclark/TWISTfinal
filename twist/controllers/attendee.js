@@ -1,5 +1,5 @@
-let models=require('../models/people');
-const {sanitizeBody}=require('express-validator/filter');
+let people=require('../models/people');
+const {sanitizeBody}=require('express-validator');
 
 exports.show_register=function(req,res,next){
     res.render('register/register')
@@ -15,7 +15,7 @@ exports.new_attendee=[
     sanitizeBody('state').escape(),
     sanitizeBody('zip').escape(),
     (req,res,next)=>{
-    const newPerson=models.people.build({
+    var newPerson=new people({
         firstName:req.body.firstName,
         lastName:req.body.lastName,
         role:req.body.role,
@@ -31,10 +31,10 @@ exports.new_attendee=[
         city:req.body.city,
         state:req.body.state,
         zip:req.body.zip
-    })//not right
+    });
     newPerson.save(function(err){
         if (err) {return next(err);}
-        res.redirect(show_confirmation);
+        res.redirect('/confirmation');
     });
     }
 ]

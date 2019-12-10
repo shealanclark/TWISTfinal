@@ -11,14 +11,14 @@ head
   h2 Registration
   #regForm
     .form_container
-      form(name='register' method='post' action='something')
+      form(name='register' method='post' action='')
         p
           br
           label(for='fName') First Name:
-          input#fName(type='text' name='fName' placeholder='First Name' required='')
+          input#fName(type='text' name='firstName' placeholder='First Name' required='')
         p
           label(for='lName') Last Name:
-          input#lName(type='text' name='lName' placeholder='Last Name' required='')
+          input#lName(type='text' name='lastName' placeholder='Last Name' required='')
         p
           label(for='email') Email:
           input#email(type='email' name='email' placeholder='example@domain.com' required='')
@@ -93,16 +93,16 @@ head
         label(for='type') Type:
         br
         br
-        input#student(type='radio' name='type' value='student')
+        input#student(type='radio' name='role' value='student')
         label(for='student') Student
         br
-        input#parent(type='radio' name='type' value='parent')
+        input#parent(type='radio' name='role' value='parent')
         label(for='parent') Parent
         br
-        input#educator(type='radio' name='type' value='educator')
+        input#educator(type='radio' name='role' value='educator')
         label(for='educator') Educator
         br
-        input#sponsor(type='radio' name='type' value='sponsor')
+        input#sponsor(type='radio' name='role' value='sponsor')
         label(for='sponsor') Sponsor
         br
         br
