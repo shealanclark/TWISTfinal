@@ -12,7 +12,7 @@ div
     form(method='POST' action='')
       label(for='name') Room Name:
       br
-      input#room(type='text' name='roomName' placeholder='eg. TC162' value=(undefined===name ? '' : name) required='')
+      input#room(type='text' name='roomNumber' placeholder='eg. TC162' value=(undefined===name ? '' : name) required='')
       br
       br
       br
@@ -23,5 +23,5 @@ div
       br
       br
       div
-        (exists===undefined ? '' : exists)
+        p=(undefined===exists ? '' : exists)
       input(type='submit')

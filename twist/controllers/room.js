@@ -16,6 +16,7 @@ exports.addRoomPost = [
     if (!errors.isEmpty()){
       //There's an error
       res.render('dashboard/add-room/add-room', {roomName: room.name, capacity: room.capacity, errors: errors.array()});
+      console.log('Error')
       return;
     }
     else{
@@ -25,10 +26,12 @@ exports.addRoomPost = [
           //Found one
           if (foundRoom){
             res.render('dashboard/add-room/add-room', {roomName: room.name, capacity: room.capacity, exists: 'Room Already Exists'});
+            console.log('Found Room')
           }
           else{
             room.save(function(err){
               if (err){ return next(err);}
+              console.log('Saved')
             });
           }
         });
