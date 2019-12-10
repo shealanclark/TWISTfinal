@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+let room = ('../controllers/room');
 // GET login
 router.get('/login', function(req, res, next) {
   res.render('login/login', {title: 'Login'});
@@ -62,9 +62,10 @@ router.get('/dashboard/add-room', function(req, res, next){
 });
 
 //POST add-room
-router.post('/dashboard/add-room', function(req, res, next){
-  res.redirect('/dashboard');
-});
+router.post('/dashboard/add-room', room.addRoomPost);
+//router.post('/dashboard/add-room', room.addRoomPost, function(req, res, next){
+//  res.redirect('/dashboard');
+//});
 
 //GET edit-room
 router.get('/dashboard/edit-room', function(req, res, next){
@@ -111,4 +112,3 @@ router.post('/dashboard/edit-schedule', function (req, res, next){
   res.redirect('/dashboard');
 });
 
-module.exports = router;

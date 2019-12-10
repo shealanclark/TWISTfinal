@@ -12,14 +12,16 @@ div
     form(method='POST' action='')
       label(for='name') Room Name:
       br
-      input#room(type='text' name='roomName' placeholder='eg. TC162' required='')
+      input#room(type='text' name='roomName' placeholder='eg. TC162' value=(undefined===name ? '' : name) required='')
       br
       br
       br
       label(for='capacity') Capacity:
       br
-      input#capacity(type='text' name='capacity' placeholder='15')
+      input#capacity(type='text' name='capacity' placeholder='15' value=(undefined===capacity ? '' : capacity) required='')
       br
       br
       br
+      div
+        (exists===undefined ? '' : exists)
       input(type='submit')
