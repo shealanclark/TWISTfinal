@@ -9,14 +9,13 @@ exports.addRoomPost = [
     const errors = validator.validationResult(req);
     //Create a room
     var room = new Room(
-      {name: req.body.roomName,
+      {roomName: req.body.roomName,
       capacity: req.body.capacity}
     );
     
     if (!errors.isEmpty()){
       //There's an error
-      res.render('dashboard/add-room/add-room', {roomName: room.name, capacity: room.capacity, errors: errors.array()});
-      console.log('Error')
+      res.render('dashboard/add-room/add-room', {roomName: room.roomName, capacity: room.capacity, errors: errors.array()});
       return;
     }
     else{
@@ -25,13 +24,11 @@ exports.addRoomPost = [
           if (err) {return next(err);}
           //Found one
           if (foundRoom){
-            res.render('dashboard/add-room/add-room', {roomName: room.name, capacity: room.capacity, exists: 'Room Already Exists'});
-            console.log('Found Room')
+            res.render('dashboard/add-room/add-room', {roomName: room.roomName, capacity: room.capacity, exists: 'Room Already Exists'});
           }
           else{
             room.save(function(err){
               if (err){ return next(err);}
-              console.log('Saved')
             });
           }
         });

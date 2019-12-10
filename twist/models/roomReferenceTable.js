@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var RoomReferenceSchema = new Schema(
   {
-    roomNumber: {type: String, required: true},
+    roomName: {type: String, required: true},
     capacity: {type: Number, required: true}
   }
 );
