@@ -8,16 +8,16 @@ router.get('/', function(req, res, next) {
 });
 
 // GET register
-router.get('/register',attendee.show_register)
+router.get('/register',attendee.showRegister)
 
 //POST register
-router.post('/register',attendee.new_attendee)
+router.post('/register',attendee.newAttendee)
 //router.post('/register', function(req, res, next){
 //  res.redirect('/confirmation');
 //});
 
 //The redirect sends a GET for /confirmation. Route below handles GET
 //GET confirmation
-router.get('/confirmation',attendee.show_confirmation)
+router.get('/confirmation',attendee.showConfirmation)
 
 module.exports = router;
