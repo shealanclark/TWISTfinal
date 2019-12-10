@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let room = ('../controllers/room');
+let room = require('../controllers/room');
 
 // GET login
 router.get('/login', function(req, res, next) {

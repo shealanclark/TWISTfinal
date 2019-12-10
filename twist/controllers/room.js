@@ -1,3 +1,4 @@
+let Room=require('../models/roomReferenceTable');
 const validator = require('express-validator');
 
 exports.addRoomPost = [

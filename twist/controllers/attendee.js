@@ -1,11 +1,11 @@
 let people=require('../models/people');
 const {sanitizeBody}=require('express-validator');
 
-exports.show_register=function(req,res,next){
+exports.showRegister=function(req,res,next){
     res.render('register/register')
 }
 
-exports.new_attendee=[
+exports.newAttendee=[
     sanitizeBody('firstName').escape(),
     sanitizeBody('lastName').escape(),
     sanitizeBody('role').escape(),
@@ -39,6 +39,6 @@ exports.new_attendee=[
     }
 ]
 
-exports.show_confirmation=function(req,res,next){
+exports.showConfirmation=function(req,res,next){
     res.render('register/confirmation/confirmation')
 }
