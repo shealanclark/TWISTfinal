@@ -2,6 +2,7 @@ let perSessionInfo = reqire('../models/perSessionInfo');
 const {sanitizeBody} = require('express-validator');
 
 exports.new_session = [
+    validator.body(sessionId, time, roomNumber, topicId, speakerId, blockId, participants).isLength({min: 1}).trim(),
     sanitizeBody('sessionId').escape(),
     sanitizeBody('time').escape(),
     sanitizeBody('roomNumber').escape(),
