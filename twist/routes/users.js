@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let attendee=require('../controllers/attendee')
+let attendee=require('../controllers/attendee');
 
 // GET home
 router.get('/', function(req, res, next) {

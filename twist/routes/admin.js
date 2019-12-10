@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let room = require('../controllers/room');
+let attendee=require('../controllers/attendee');
 
 // GET login
 router.get('/login', function(req, res, next) {
@@ -43,7 +44,7 @@ router.get('/dashboard/add-attendee', function(req, res, next){
 });
 
 //POST add-attendee
-router.post('/dashboard/add-attendee', function(req, res, next){
+router.post('/dashboard/add-attendee', attendee.newAttendee, function(req, res, next){
   res.redirect('/dashboard');
 });
 
