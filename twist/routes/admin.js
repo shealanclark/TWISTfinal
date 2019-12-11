@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 let room = require('../controllers/room');
 let attendee=require('../controllers/attendee');
+let hasAuth = require('../controllers/auth');
+let auth = false;
 
 // GET login
 router.get('/login', function(req, res, next) {
