@@ -1,4 +1,4 @@
-let perSessionInfo = require('../models/perSessionInfo');
+let session = require('../models/perSessionInfo');
 let speaker=require('../models/speaker');
 let topicRef=require('../models/topicReferenceTable');
 const validator = require('express-validator');

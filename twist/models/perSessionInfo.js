@@ -20,4 +20,4 @@ PerSessionSchema
 //   //Not sure what we're returning yet
 // });
 
-module.exports = mongoose.model('perSessionInfo', PerSessionSchema);
+module.exports = mongoose.model('session', PerSessionSchema);
