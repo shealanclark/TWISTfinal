@@ -16,8 +16,8 @@ var PerSessionSchema = new Schema(
 
 PerSessionSchema
 .virtual('url')
-.get ( => {
-  //Not sure what we're returning yet
-});
+// .get ( => {
+//   //Not sure what we're returning yet
+// });
 
 module.exports = mongoose.model('perSessionInfo', PerSessionSchema);

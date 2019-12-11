@@ -12,13 +12,13 @@ div
     form(method='POST' action='')
       label(for='fName') First Name:
       br
-      input#fName(type='text' name='fName' required='')
+      input#fName(type='text' name='firstName' required='')
       br
       br
       br
       label(for='lName') Last Name:
       br
-      input#lName(type='text' name='lName' required='')
+      input#lName(type='text' name='lastName' required='')
       br
       br
       br
@@ -33,5 +33,15 @@ div
       input#phone(type='text' name='phone' required='')
       br
       br
+      br
+      label(for='topicName') Topic Name:
+      br
+      input#topicName(type='text' name='topicName' required='')
+      br
+      br
+      br
+      label(for='topicDesc') Topic Description:
+      br
+      textarea#topicDesc(name='topicDesc', cols="60", rows="5")
       br
       input(type='submit')
