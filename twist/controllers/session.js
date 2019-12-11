@@ -52,6 +52,7 @@ exports.newSpeaker=[
             newSpeaker.save(function(err){
                 if(err){return next(err);}
             });
+            res.redirect('/dashboard');
         }
     }
 ]

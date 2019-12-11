@@ -89,9 +89,10 @@ router.get('/dashboard/add-speaker', function (req, res, next){
 });
 
 //POST add-speaker
-router.post('/dashboard/add-speaker', session.newSpeaker, function (req, res, next){
-  res.redirect('/dashboard');
-});
+router.post('/dashboard/add-speaker', session.newSpeaker);
+// router.post('/dashboard/add-speaker', session.newSpeaker, function (req, res, next){
+//   res.redirect('/dashboard');
+// });
 
 //GET add-schedule
 router.get('/dashboard/add-schedule', function (req, res, next){
