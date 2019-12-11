@@ -47,9 +47,7 @@ router.get('/dashboard/add-attendee', function(req, res, next){
 });
 
 //POST add-attendee
-router.post('/dashboard/add-attendee', attendee.newAttendee, function(req, res, next){
-  res.redirect('/dashboard');
-});
+router.post('/dashboard/add-attendee', attendee.newAttendee);
 
 //GET edit-attendee
 router.get('/dashboard/edit-attendee', function(req, res, next){
@@ -67,9 +65,7 @@ router.get('/dashboard/add-room', function(req, res, next){
 });
 
 //POST add-room
-router.post('/dashboard/add-room', room.addRoomPost, function(req, res, next){
-  res.redirect('/dashboard');
-});
+router.post('/dashboard/add-room', room.addRoomPost);
 
 //GET edit-room
 router.get('/dashboard/edit-room', function(req, res, next){
@@ -93,9 +89,6 @@ router.get('/dashboard/add-speaker', function (req, res, next){
 
 //POST add-speaker
 router.post('/dashboard/add-speaker', session.newSpeaker);
-// router.post('/dashboard/add-speaker', session.newSpeaker, function (req, res, next){
-//   res.redirect('/dashboard');
-// });
 
 //GET add-schedule
 router.get('/dashboard/add-schedule', function (req, res, next){
