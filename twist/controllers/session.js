@@ -29,8 +29,7 @@ exports.newSpeaker=[
 
         var newTopic=new topicRef({
             topicName:req.body.topicName,
-            topicDesc:req.body.topicDesc,
-            // peopleInfo:req.body.peopleInfo, not sure what this is
+            topicDesc:req.body.topicDesc
         })
 
         var newSpeaker=new speaker({
