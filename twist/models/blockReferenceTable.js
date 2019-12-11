@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var BlockReferenceSchema = new Schema(
-  {
-    blockId: {type: Schema.Types.ObjectId, required: true},
+  {// We can use Mongo's randomly generated ID as an identity property
+    blockNumber: {type: Number, required: true},
     blockStart: {type: Date, required: true},
     blockEnd: {type: Date, required: true}
   }

@@ -3,8 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var HighschoolSchema = new Schema(
-  {
-    highschoolId: {type: Schema.Types.ObjectId, required: true};
+  { // We can use Mongo's randomly generated ID as an identity property
     name: {type: String, required: true},
     counselor: {type: String, required: true},
     counselorEmail: {type: String},

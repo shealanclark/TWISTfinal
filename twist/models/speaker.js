@@ -4,11 +4,11 @@ var Schema = mongoose.Schema;
 
 var SpeakerSchema = new Schema(
   {//removed speakerId
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
+	lastName: {type: String, required: true},
+	firstName: {type: String, required: true},
     email: {type: String, required: true},
     phone: {type: String, required: true},
-    topic: {type: String, required: true}
+    topicName: {type: String, ref: 'topicReferenceTable', required: true}
   }
 );
 
