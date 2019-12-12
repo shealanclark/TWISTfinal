@@ -22,16 +22,21 @@ head
       br
       
       .carousel
+        img.mySlides(src='images/4.jpg')
         img.mySlides(src='images/1.jpg')
         img.mySlides(src='images/2.jpg')
         img.mySlides(src='images/3.jpg')
-        img.mySlides(src='images/4.jpg')
         img.mySlides(src='images/5.jpg')
+        img.mySlides(src='images/RegisterToday.jpg')
         button.left(onclick='plusDivs(-1)') Previous
         button.right(onclick='plusDivs(1)') Next
 .descpara2
   p
     | Join in on this event that gives you insight into several career possibilities with like-minded peers.
+    
+#footer 
+  img(src='/images/footers.png' alt='footer')
+
 script(src='javascripts/carousel.js')
 
   
