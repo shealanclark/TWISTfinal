@@ -4,11 +4,10 @@ let topicRef=require('../models/topicReferenceTable');
 const validator = require('express-validator');
 
 exports.new_session = [
-    validator.body('time', 'roomNumber', 'topicId', 'speakerId', 'blockId', 'participants').isLength({min: 1}).trim(),
-    validator.sanitizeBody('time','roomNumber','topicId','speakerId','blockId','participants').escape(),
+    validator.body('roomNumber', 'topicId', 'speakerId', 'blockId', 'participants').isLength({min: 1}).trim(),
+    validator.sanitizeBody('roomNumber','topicId','speakerId','blockId','participants').escape(),
     (req, res, next) => {
         var newSession = new session({
-        time: req.body.time,
         roomNumber: req.body.roomNumber,
         topicId: req.body.topicId,
         speakerId: req.body.speakerId,
