@@ -87,7 +87,32 @@ router.get('/dashboard/add-speaker', auth.hasAuth, function (req, res, next){
   res.render('dashboard/add-speaker/add-speaker');
 });
 
+//GET add-speaker
+router.get('/logout', auth.logout, function (req, res, next){
+  res.redirect('/');
+});
+
 //POST add-speaker
 router.post('/dashboard/add-speaker', auth.hasAuth, session.newSpeaker);
+
+//GET add-block
+router.get('/dashboard/add-block'), auth.hasAuth, function(req, res, next){
+  res.render('dashboard/add-block/add-block');
+}
+
+//POST add-block
+router.post('/dashboard/add-block'), auth.hasAuth, function(req, res, next){
+  res.redirect('/dashboard');
+}
+
+//GET edit-block
+router.get('/dashboard/edit-block'), auth.hasAuth, function(req, res, next){
+  res.render('dashboard/edit-block/edit-block');
+}
+
+//POST edit-block
+router.post('/dashboard/edit-block'), auth.hasAuth, function(req, res, next){
+  res.redirect('/dashboard');
+}
 
 module.exports=router;

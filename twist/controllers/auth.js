@@ -19,3 +19,13 @@ exports.hasAuth = function(req, res, next){
     res.redirect('login');
   }
 }
+
+exports.logout = function(req, res, next){
+  sess=req.session;
+  sess.destroy((err) => {
+  if (err){
+    return console.log(err);
+  }
+  next();
+  });
+}
