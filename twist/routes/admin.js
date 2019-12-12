@@ -82,14 +82,14 @@ router.get('/dashboard/print-schedule', auth.hasAuth, function(req, res, next){
   res.render('dashboard/print-schedule/print-schedule');
 });
 
-//GET add-speaker
-router.get('/dashboard/add-speaker', auth.hasAuth, function (req, res, next){
-  res.render('dashboard/add-speaker/add-speaker');
+//GET logout
+router.get('/logout', auth.logout, function (req, res, next){
+  res.redirect('/');
 });
 
 //GET add-speaker
-router.get('/logout', auth.logout, function (req, res, next){
-  res.redirect('/');
+router.get('/dashboard/add-speaker', auth.hasAuth, function (req, res, next){
+  res.render('dashboard/add-speaker/add-speaker');
 });
 
 //POST add-speaker
@@ -101,9 +101,7 @@ router.get('/dashboard/add-block'), auth.hasAuth, function(req, res, next){
 }
 
 //POST add-block
-router.post('/dashboard/add-block'), auth.hasAuth, function(req, res, next){
-  res.redirect('/dashboard');
-}
+router.post('/dashboard/add-block', auth.hasAuth, session.newBlock);
 
 //GET edit-block
 router.get('/dashboard/edit-block'), auth.hasAuth, function(req, res, next){

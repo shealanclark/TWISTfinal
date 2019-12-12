@@ -16,4 +16,4 @@ BlockReferenceSchema
 //   Not sure what goes here yet
 // });
 
-module.exports = mongoose.model('blockReferenceTable', BlockReferenceSchema);
+module.exports = mongoose.model('block', BlockReferenceSchema);
