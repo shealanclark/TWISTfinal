@@ -96,9 +96,9 @@ router.get('/dashboard/add-speaker', auth.hasAuth, function (req, res, next){
 router.post('/dashboard/add-speaker', auth.hasAuth, session.newSpeaker);
 
 //GET add-block
-router.get('/dashboard/add-block'), auth.hasAuth, function(req, res, next){
+router.get('/dashboard/add-block', auth.hasAuth, function(req, res, next){
   res.render('dashboard/add-block/add-block');
-}
+});
 
 //POST add-block
 router.post('/dashboard/add-block', auth.hasAuth, session.newBlock);
