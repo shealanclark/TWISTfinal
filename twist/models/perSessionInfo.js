@@ -8,9 +8,9 @@ var PerSessionSchema = new Schema(
     blockNumber: {type: Number, ref: 'blockReferenceTable', required: true},
     roomNumber: {type: String, ref: 'roomReferenceTable', required: true},
     speakerId: {type: String, ref: 'speaker', required: true},
-    participants: {type: String, required: true}
+    participantListId: {type: String}
   }		// I don't know how to type this last one.
-);
+);//The name of the session is the topic.
 
 PerSessionSchema
 .virtual('url')
