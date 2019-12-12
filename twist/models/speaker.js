@@ -8,7 +8,7 @@ var SpeakerSchema = new Schema(
 	firstName: {type: String, required: true},
     email: {type: String, required: true},
     phone: {type: String, required: true},
-    topicName: {type: String, ref: 'topicReferenceTable', required: true}
+    topicId: {type: String, ref: 'topicReferenceTable', required: true}
   }
 );
 

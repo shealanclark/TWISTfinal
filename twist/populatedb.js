@@ -134,13 +134,11 @@ function personCreate(lastName, firstName, role, topic1, topic2, topic3, topic4,
   });
 }
 
-function sessionCreate(topicName, blockNumber, blockStart, blockEnd, roomNumber, speakerLastName, speakerFirstName, participants, cb) {
+function sessionCreate(topicName, blockNumber, roomNumber, speakerLastName, speakerFirstName, participants, cb) {
   // Import parameters
   let sessiondetail = {		// Mongo's automatically assigned ID could be used here
 	  topicName: topicName,
 	  blockNumber: blockNumber,
-	  blockStart: blockStart,
-	  blockEnd: blockEnd,
 	  roomNumber: roomNumber,
 	  speakerLastName: speakerLastName,
 	  speakerFirstName: speakerFirstName,
@@ -275,8 +273,8 @@ function createPeople(cb) {
 function createSessions(cb) {
     async.parallel([
         function(callback) {
-			// (topicName, blockNumber, blockStart, blockEnd, roomNumber, speakerLastName, speakerFirstName, participants, cb)
-          sessionCreate("dummyTopic", 1, '1970-12-31T09:30:00.000+00:00', '1970-12-31T10:00:00.000+00:00', "dummyRoom", "Doe", "John", "dummyParticipants", callback)
+			// (topicName, blockNumber, roomNumber, speakerLastName, speakerFirstName, participants, cb)
+          sessionCreate("dummyTopic", 1, "dummyRoom", "Doe", "John", "dummyParticipants", callback)
         }
     ],
     // optional callback

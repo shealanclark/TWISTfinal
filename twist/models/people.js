@@ -19,10 +19,10 @@ var PeopleSchema = new Schema(
     city: {type: String, required: true},
     state: {type: String, required: true},
     zip: {type: String, required: true},
-    block1: {type: Schema.Types.ObjectId, ref: 'perSessionInfo'},
-    block2: {type: Schema.Types.ObjectId, ref: 'perSessionInfo'},
-    block3: {type: Schema.Types.ObjectId, ref: 'perSessionInfo'},
-    block4: {type: Schema.Types.ObjectId, ref: 'perSessionInfo'}
+    block1: {type: String, ref: 'perSessionInfo'},   //  These are sessionID s
+    block2: {type: String, ref: 'perSessionInfo'},
+    block3: {type: String, ref: 'perSessionInfo'},
+    block4: {type: String, ref: 'perSessionInfo'}
   }
 );
 

@@ -4,10 +4,8 @@ var Schema = mongoose.Schema;
 
 var PerSessionSchema = new Schema(
   { // We can use Mongo's randomly generated ID as an identity property
-    topicName: {type: String, ref: 'topicReferenceTable', required: true},
+    topicId: {type: String, ref: 'topicReferenceTable', required: true},
     blockNumber: {type: Number, ref: 'blockReferenceTable', required: true},
-    blockStart: {type: Date, ref: 'blockReferenceTable', required: true},
-	blockEnd: {type: Date, ref: 'blockReferenceTable', required: true},
     roomNumber: {type: String, ref: 'roomReferenceTable', required: true},
     speakerLastName: {type: String, ref: 'speaker', required: true},
 	speakerFirstName: {type: String, ref: 'speaker', required: true},
