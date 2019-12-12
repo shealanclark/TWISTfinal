@@ -16,7 +16,7 @@ exports.hasAuth = function(req, res, next){
   if(sess.user === 'admin' && sess.password == 'admin'){
     return next();
   }else{
-    res.redirect('login');
+    res.redirect('/login');
   }
 }
 
