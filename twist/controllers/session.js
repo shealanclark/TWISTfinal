@@ -2,6 +2,7 @@ let session = require('../models/perSessionInfo');
 let speaker=require('../models/speaker');
 let topicRef=require('../models/topicReferenceTable');
 let block=require('../models/blockReferenceTable');
+let room=require('../models/roomReferenceTable');
 const validator = require('express-validator');
 
 exports.new_session = [
@@ -80,3 +81,11 @@ exports.newBlock=[
         }
     }
 ]
+
+exports.getCreateSession=function(req,res,next){
+    room.find()
+        .exec(function(err,list_rooms){
+            if(err){return next(err);}
+            res.render('dashboard/create-session/create-session',{room_list:list_rooms});
+        });
+};

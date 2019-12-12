@@ -22,9 +22,10 @@ router.get('/dashboard', auth.hasAuth, function(req, res, next){
 });
 
 //GET create-session
-router.get('/dashboard/create-session', auth.hasAuth, function(req, res, next){
-  res.render('dashboard/create-session/create-session');
-});
+router.get('/dashboard/create-session', auth.hasAuth, session.getCreateSession);
+// router.get('/dashboard/create-session', auth.hasAuth, function(req, res, next){
+//   res.render('dashboard/create-session/create-session');
+// });
 
 //POST create-session
 router.post('/dashboard/create-session', auth.hasAuth, function(req, res, next){
