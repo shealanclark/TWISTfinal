@@ -7,9 +7,8 @@ var PerSessionSchema = new Schema(
     topicId: {type: String, ref: 'topicReferenceTable', required: true},
     blockNumber: {type: Number, ref: 'blockReferenceTable', required: true},
     roomNumber: {type: String, ref: 'roomReferenceTable', required: true},
-    speakerLastName: {type: String, ref: 'speaker', required: true},
-	speakerFirstName: {type: String, ref: 'speaker', required: true},
-    participants: {type: Schema.Types.ObjectId, ref: 'people', required: true}
+    speakerId: {type: String, ref: 'speaker', required: true},
+    participants: {type: String, ref: 'people', required: true}
   }		// I don't know how to type this last one.
 );
 
