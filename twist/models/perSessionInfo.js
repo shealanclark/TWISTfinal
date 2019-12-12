@@ -3,13 +3,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var PerSessionSchema = new Schema(
-  {
+  { // We can use Mongo's randomly generated ID as an identity property
+    topicId: {type: String, ref: 'topicReferenceTable', required: true},
+    blockNumber: {type: Number, ref: 'blockReferenceTable', required: true},
     roomNumber: {type: String, ref: 'roomReferenceTable', required: true},
-    topicId: {type: Schema.Types.ObjectId, ref: 'topicReferenceTable', required: true},
-    speakerId: {type: Schema.Types.ObjectId, ref: 'speaker', required: true},
-    blockId: {type: Schema.Types.ObjectId, ref: 'blockReferenceTable', required: true},
-    participants: {type: Schema.Types.ObjectId, ref: 'people', required: true}
-  }
+    speakerId: {type: String, ref: 'speaker', required: true},
+    participants: {type: String, ref: 'people', required: true}
+  }		// I don't know how to type this last one.
 );
 
 PerSessionSchema
