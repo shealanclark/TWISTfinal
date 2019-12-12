@@ -19,7 +19,7 @@ var PeopleSchema = new Schema(
     city: {type: String, required: true},
     state: {type: String, required: true},
     zip: {type: String, required: true},
-    block1: {type: String, ref: 'perSessionInfo'},   //  These are sessionID s
+    block1: {type: String, ref: 'perSessionInfo'},   //  These are participantList's they're a part of
     block2: {type: String, ref: 'perSessionInfo'},
     block3: {type: String, ref: 'perSessionInfo'},
     block4: {type: String, ref: 'perSessionInfo'}
