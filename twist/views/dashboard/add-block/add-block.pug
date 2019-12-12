@@ -23,6 +23,13 @@ div
       br
       br
       div
+      label(for='blockEnd') Block End:
+      br
+      input#capacity(type='text' name='blockEnd' placeholder='eg. 11:00' value=(undefined===blockEnd ? '' : blockEnd) required='')
+      br
+      br
+      br
+      div
         p=(undefined===exists ? '' : exists)
         p=errors
-      input(type='submit' value='submit')
+      input(type='submit' value='Submit')
