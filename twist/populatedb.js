@@ -5,6 +5,8 @@
 
 // Command to populate: node populatedb 'link to the mongoDB database'
 // Replace <password> with the password to the respective user.
+// If the console returns "cannot read property split of null,
+//   try again without the single quotation marks.
 
 // Get arguments passed on command line
 var userArgs = process.argv.slice(2);
@@ -56,12 +58,12 @@ function blockReferenceCreate(blockNumber, blockStart, blockEnd, cb) {
   // Throw error if necessary; otherwise append to array
   blockreference.save(function (err) {
     if (err) {
-      cb(err, null)
+      cb(err, null);
       return
     }
     console.log('New Block Reference: ' + blockreference);
-    blockreferences.push(blockreference)
-    cb(null, blockreference)
+    blockreferences.push(blockreference);
+    cb(null, blockreference);
   });
 }
 
@@ -84,12 +86,12 @@ function highschoolCreate(name, counselor, counselorEmail, counselorPhone, addre
   // Throw error if necessary; otherwise append to array
   highschool.save(function (err) {
     if (err) {
-      cb(err, null)
+      cb(err, null);
       return
     }
     console.log('New Highschool: ' + highschool);
-    highschools.push(highschool)
-    cb(null, highschool)
+    highschools.push(highschool);
+    cb(null, highschool);
   });
 }
 
@@ -123,12 +125,12 @@ function personCreate(lastName, firstName, role, topic1, topic2, topic3, topic4,
   // Throw error if necessary; otherwise append to array
   person.save(function (err) {
     if (err) {
-      cb(err, null)
+      cb(err, null);
       return
     }
     console.log('New Person: ' + person);
-    people.push(person)
-    cb(null, person)
+    people.push(person);
+    cb(null, person);
   });
 }
 
@@ -138,7 +140,7 @@ function sessionCreate(topicName, blockNumber, blockStart, blockEnd, roomNumber,
 	  topicName: topicName,
 	  blockNumber: blockNumber,
 	  blockStart: blockStart,
-	  blockEnd: blockEnd
+	  blockEnd: blockEnd,
 	  roomNumber: roomNumber,
 	  speakerLastName: speakerLastName,
 	  speakerFirstName: speakerFirstName,
@@ -151,12 +153,12 @@ function sessionCreate(topicName, blockNumber, blockStart, blockEnd, roomNumber,
   // Throw error if necessary; otherwise append to array
   session.save(function (err) {
     if (err) {
-      cb(err, null)
+      cb(err, null);
       return
     }
     console.log('New Session: ' + session);
-    sessions.push(session)
-    cb(null, session)
+    sessions.push(session);
+    cb(null, session);
   });
 }
 
@@ -173,12 +175,12 @@ function roomReferenceCreate(roomNumber, capacity, cb) {
   // Throw error if necessary; otherwise append to array
   roomreference.save(function (err) {
     if (err) {
-      cb(err, null)
+      cb(err, null);
       return
     }
     console.log('New Room Reference: ' + roomreference);
-    roomreferences.push(roomreference)
-    cb(null, roomreference)
+    roomreferences.push(roomreference);
+    cb(null, roomreference);
   });
 }
 
@@ -198,12 +200,12 @@ function speakerCreate(firstName, lastName, email, phone, topicName, cb) {
   // Throw error if necessary; otherwise append to array
   speaker.save(function (err) {
     if (err) {
-      cb(err, null)
+      cb(err, null);
       return
     }
     console.log('New Speaker: ' + speaker);
-    speakers.push(speaker)
-    cb(null, speaker)
+    speakers.push(speaker);
+    cb(null, speaker);
   });
 }
 
@@ -220,12 +222,12 @@ function topicReferenceCreate(topicName, topicDesc, cb) {
   // Throw error if necessary; otherwise append to array
   topicreference.save(function (err) {
     if (err) {
-      cb(err, null)
+      cb(err, null);
       return
     }
     console.log('New Topic Reference: ' + topicreference);
-    topicreferences.push(topicreference)
-    cb(null, topicreference)
+    topicreferences.push(topicreference);
+    cb(null, topicreference);
   });
 }
 
@@ -234,16 +236,16 @@ function topicReferenceCreate(topicName, topicDesc, cb) {
 function createBlockReferences(cb) {
     async.parallel([
         function(callback) {
-          blockReferenceCreate(1, 1970-12-31T09:30:00.000+00:00, 1970-12-31T10:00:00.000+00:00, callback)
-        }
+          blockReferenceCreate(1, '1970-12-31T09:30:00.000+00:00', '1970-12-31T10:00:00.000+00:00', callback)
+        },
 		function(callback) {
-          blockReferenceCreate(2, 1970-12-31T10:10:00.000+00:00, 1970-12-31T10:40:00.000+00:00, callback)
-        }
+          blockReferenceCreate(2, '1970-12-31T10:10:00.000+00:00', '1970-12-31T10:40:00.000+00:00', callback)
+        },
 		function(callback) {
-          blockReferenceCreate(3, 1970-12-31T10:50:00.000+00:00, 1970-12-31T11:20:00.000+00:00, callback)
-        }
+          blockReferenceCreate(3, '1970-12-31T10:50:00.000+00:00', '1970-12-31T11:20:00.000+00:00', callback)
+        },
 		function(callback) {
-          blockReferenceCreate(4, 1970-12-31T11:30:00.000+00:00, 1970-12-31T12:15:00.000+00:00, callback)
+          blockReferenceCreate(4, '1970-12-31T11:30:00.000+00:00', '1970-12-31T12:15:00.000+00:00', callback)
         }
     ],
     // optional callback
@@ -263,7 +265,7 @@ function createHighschools(cb) {
 function createPeople(cb) {
     async.parallel([
         function(callback) {
-          personCreate("Doe", "Jane", "dummyRole", ObjectId(""), ObjectId(""), ObjectId(""), ObjectId(""), ObjectId(""), ObjectId(""), ObjectId(""), "dummyHigh", "dummy@dummy.com", "dummyAddress", "dummyCity", "ZZ", "12345", ObjectId(""), ObjectId(""), ObjectId(""), ObjectId(""), callback)
+          personCreate("Doe", "Jane", "dummyRole", "dummyTopic1", "dummyTopic2", "dummyTopic3", "dummyTopic4", "dummyTopic5", "dummyTopic6", "dummyHigh", "dummy@dummy.com", "dummyAddress", "dummyCity", "ZZ", "12345", ObjectId(""), ObjectId(""), ObjectId(""), ObjectId(""), callback)
         }
     ],
     // optional callback
@@ -274,7 +276,7 @@ function createSessions(cb) {
     async.parallel([
         function(callback) {
 			// (topicName, blockNumber, blockStart, blockEnd, roomNumber, speakerLastName, speakerFirstName, participants, cb)
-          sessionCreate("dummyTopic", 1, 1970-12-31T09:30:00.000+00:00, 1970-12-31T10:00:00.000+00:00, "dummyRoom", "Doe", "John", "dummyParticipants", callback)
+          sessionCreate("dummyTopic", 1, '1970-12-31T09:30:00.000+00:00', '1970-12-31T10:00:00.000+00:00', "dummyRoom", "Doe", "John", "dummyParticipants", callback)
         }
     ],
     // optional callback
@@ -294,7 +296,7 @@ function createRoomReferences(cb) {
 function createSpeakers(cb) {
     async.parallel([
         function(callback) {
-          speakerCreate("Doe", "John", "dummy@dummy.com", "123-456-7890", "dummyTopic" callback)
+          speakerCreate("Doe", "John", "dummy@dummy.com", "123-456-7890", "dummyTopic", callback)
         }
     ],
     // optional callback
@@ -305,40 +307,40 @@ function createTopicReferences(cb) {
     async.parallel([
         function(callback) {
           topicReferenceCreate("Chiropractic Care", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Dentistry", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Engineering", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Finance", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Graphic Design", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Interior Architecture", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Law Enforcement", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Legal Services", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Non-Profit Administration", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Professional Pilot", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Realty", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Research Scientist", "Description", callback)
-        }
+        },
 		function(callback) {
           topicReferenceCreate("Zoo Veterinarian Medicine", "Description", callback)
         }

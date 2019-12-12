@@ -17,8 +17,8 @@ var HighschoolSchema = new Schema(
 
 HighschoolSchema
 .virtual('url')
-.get ( => {
-  //Not sure what goes here yet
-});
+// .get ( => {
+//   Not sure what goes here yet
+// });
 
 module.exports = mongoose.model('highschool', HighschoolSchema);
