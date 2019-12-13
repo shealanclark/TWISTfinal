@@ -3,6 +3,7 @@ const validator = require('express-validator');
 
 exports.addRoomPost = [
   validator.body('roomNumber', 'capacity').isLength({min: 1, max: 10}).trim(),
+  validator.body('capacity').isNumeric(),
   //Removes potential xss characters
   validator.sanitizeBody('roomNumber', 'capacity').escape(),
   (req, res, next) => {
