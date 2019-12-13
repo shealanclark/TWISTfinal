@@ -10,20 +10,20 @@ h2 Add Block
 div
   .form_container
     form(method='POST' action='')
-      label(for='blockNumber') Block Number:
+      label(for='blockNumber') Block Number*:
       br
       input#room(type='text' name='blockNumber' placeholder='eg. 1' value=(undefined===name ? '' : blockNumber) required='')
       br
       br
       br
-      label(for='blockStart') Block Start:
+      label(for='blockStart') Block Start*:
       br
       input#capacity(type='text' name='blockStart' placeholder='eg. 10:00' value=(undefined===blockStart ? '' : blockStart) required='')
       br
       br
       br
       div
-      label(for='blockEnd') Block End:
+      label(for='blockEnd') Block End*:
       br
       input#capacity(type='text' name='blockEnd' placeholder='eg. 11:00' value=(undefined===blockEnd ? '' : blockEnd) required='')
       br
@@ -32,5 +32,8 @@ div
       div
         p=(undefined===exists ? '' : exists)
         p=errors
+      br
+    p * Required Information
+      br
       input(type='submit' value='Submit')
       input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")

@@ -10,13 +10,13 @@ h2 Add Room
 div
   .form_container
     form(method='POST' action='')
-      label(for='name') Room Name:
+      label(for='name') Room Name*:
       br
       input#room(type='text' name='roomNumber' placeholder='eg. TC162' value=(undefined===name ? '' : roomName) required='')
       br
       br
       br
-      label(for='capacity') Capacity:
+      label(for='capacity') Capacity*:
       br
       input#capacity(type='text' name='capacity' placeholder='15' value=(undefined===capacity ? '' : capacity) required='')
       br
@@ -25,5 +25,8 @@ div
       div
         p=(undefined===exists ? '' : exists)
         p=errors
+      br
+    p * Required Information
+      br
       input(type='submit' value='Submit')
       input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")
