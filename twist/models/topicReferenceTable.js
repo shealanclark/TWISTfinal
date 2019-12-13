@@ -10,6 +10,11 @@ var TopicReferenceSchema = new Schema(
 );
 
 TopicReferenceSchema
+.virtual('pullTopics')		// pull topics from the database into the registration form
+// .get (function() {
+//	 return this.topicName;			// will this need an iterator/counter?
+// });
+
 .virtual('url')
 // .get ( => {
 //   //Not Sure What Goes Here Yet
