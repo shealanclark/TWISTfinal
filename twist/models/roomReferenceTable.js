@@ -10,9 +10,15 @@ var RoomReferenceSchema = new Schema(
 );
 
 RoomReferenceSchema
-.virtual('url')
-// .get(() => {
-//   //Not Sure what We're returning yet
-// })
+.virtual('info')
+.get(function(){
+  return this.roomNumber+' - '+this.capacity;
+});
+
+// RoomReferenceSchema
+// .virtual('cap')
+// .get(function(){
+//   return this.capacity;
+// });
 
 module.exports = mongoose.model('Room', RoomReferenceSchema);

@@ -6,24 +6,24 @@ head
   meta(name='description' content='Twist website')
   meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-h2 Add Room
+h2 Add Block
 div
   .form_container
     form(method='POST' action='')
-      label(for='name') Room Name:
+      label(for='blockNumber') Block Number:
       br
-      input#room(type='text' name='roomNumber' placeholder='eg. TC162' value=(undefined===name ? '' : roomName) required='')
+      input#room(type='text' name='blockNumber' placeholder='eg. 1' value=(undefined===name ? '' : blockNumber) required='')
       br
       br
       br
-      label(for='capacity') Capacity:
+      label(for='blockStart') Block Start:
       br
-      input#capacity(type='text' name='capacity' placeholder='15' value=(undefined===capacity ? '' : capacity) required='')
+      input#capacity(type='text' name='blockStart' placeholder='eg. 10:00' value=(undefined===blockStart ? '' : blockStart) required='')
       br
       br
       br
       div
         p=(undefined===exists ? '' : exists)
         p=errors
-      input(type='submit' value='Submit')
+      input(type='submit' value='submit')
       input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")

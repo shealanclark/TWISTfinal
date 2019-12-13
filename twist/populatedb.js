@@ -140,8 +140,7 @@ function sessionCreate(topicName, blockNumber, roomNumber, speakerLastName, spea
 	  topicName: topicName,
 	  blockNumber: blockNumber,
 	  roomNumber: roomNumber,
-	  speakerLastName: speakerLastName,
-	  speakerFirstName: speakerFirstName,
+	  speakerId: speakerId,
 	  participants: participants
   }
 
@@ -273,8 +272,8 @@ function createPeople(cb) {
 function createSessions(cb) {
     async.parallel([
         function(callback) {
-			// (topicName, blockNumber, roomNumber, speakerLastName, speakerFirstName, participants, cb)
-          sessionCreate("dummyTopic", 1, "dummyRoom", "Doe", "John", "dummyParticipants", callback)
+			// (topicName, blockNumber, roomNumber, speakerId, participants, cb)
+          sessionCreate("dummyTopic", 1, "dummyRoom", "dummySpeaker", "dummyParticipants", callback)
         }
     ],
     // optional callback
