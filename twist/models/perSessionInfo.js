@@ -9,7 +9,7 @@ var PerSessionSchema = new Schema(
     roomNumber: {type: String, ref: 'roomReferenceTable', required: true},
     speakerId: {type: String, ref: 'speaker', required: true},
     participantListId: {type: String}
-  }		// I don't know how to type this last one.
+  }		// Should this reference the participantList table?
 );//The name of the session is the topic.
 
 PerSessionSchema
