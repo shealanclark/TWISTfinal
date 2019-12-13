@@ -10,21 +10,23 @@ h2 Add Session
 div
   .form_container
     form(method='POST' action='')
-      label(for='name') Session Name:
+      label(for='name') Session Name*:
       br
       select(name='sessionName')
       br
-      label(for='speaker') Speaker Name:
+      label(for='speaker') Speaker Name*:
       br
       select(name='speakerName')
       br
-      label(for='room') Room Number:
+      label(for='room') Room Number*:
       br
       select(name='roomNumber')
       br
-      label(for='block') Time:
+      label(for='block') Time*:
       br
       select(name='blockId')
+      br
+    p * Required Information
       br
       input(type='submit' value='Submit')
       input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")
