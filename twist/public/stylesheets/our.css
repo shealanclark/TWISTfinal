@@ -364,3 +364,10 @@ footer {
   background-color: #2a9da4;
   height: 100%;
 }
+
+.scroll {
+  height: 100px;
+  width: 300px;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
