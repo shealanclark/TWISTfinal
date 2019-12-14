@@ -50,8 +50,11 @@ router.get('/dashboard/add-attendee', auth.hasAuth, function(req, res, next){
 //POST add-attendee
 router.post('/dashboard/add-attendee', auth.hasAuth, attendee.newAttendee);
 
+//GET attendee-list
+router.get('/dashboard/attendee-list', auth.hasAuth, attendee.list);
+
 //GET edit-attendee
-router.get('/dashboard/edit-attendee', auth.hasAuth, function(req, res, next){
+router.get('/dashboard/attendee-list/edit-attendee', auth.hasAuth, function(req, res, next){
   res.render('dashboard/edit-attendee/edit-attendee');
 });
 

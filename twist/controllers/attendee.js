@@ -42,3 +42,11 @@ exports.newAttendee=[
 exports.showConfirmation=function(req,res,next){
     res.render('register/confirmation/confirmation')
 }
+
+exports.list=function(req, res, next){
+    people.find()
+        .exec(function(err,list_people){
+            if(err){return next(err);}
+            res.render('dashboard/edit-attendee/attendee-list',{people_list:list_people});
+        });
+};
