@@ -6,7 +6,7 @@ head
   meta(name='description' content='Twist website')
   meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-h2 Add Block
+h2 Edit Block
 div
   .form_container
     form(method='POST' action='')
@@ -22,8 +22,14 @@ div
       br
       br
       br
+      label(for='blockEnd') Block End:
+      br
+      input#capacity(type='text' name='blockEnd' placeholder='eg. 11:00' value=(undefined===blockStart ? '' : blockStart) required='')
+      br
+      br
+      br
       div
         p=(undefined===exists ? '' : exists)
         p=errors
-      input(type='submit' value='submit')
+      input(type='submit' value='Submit')
       input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")

@@ -89,3 +89,11 @@ exports.getCreateSession=function(req,res,next){
             res.render('dashboard/create-session/create-session',{room_list:list_rooms});
         });
 };
+
+exports.getEditBlocks=function(req,res,next){
+    block.find()
+        .exec(function(err,list_blocks){
+            if(err){return next(err);}
+            res.render('dashboard/edit-block/block-list',{block_list:list_blocks});
+        });
+};
