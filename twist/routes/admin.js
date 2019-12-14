@@ -76,6 +76,9 @@ router.get('/dashboard/edit-room', auth.hasAuth, function(req, res, next){
   res.render('dashboard/edit-room/edit-room');
 });
 
+//GET room-list
+router.get('/dashboard/room-list', auth.hasAuth, room.list);
+
 //POST edit-room
 router.post('/dashboard/edit-room', auth.hasAuth, function(req, res, next){
   res.redirect('/dashboard');

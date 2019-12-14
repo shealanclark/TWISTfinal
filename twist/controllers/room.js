@@ -37,3 +37,11 @@ exports.addRoomPost = [
     }
   }
 ]
+
+exports.list=function(req,res,next){
+    Room.find()
+        .exec(function(err,list_rooms){
+            if(err){return next(err);}
+            res.render('dashboard/edit-room/room-list',{room_list:list_rooms});
+        });
+};
