@@ -10,9 +10,9 @@ var TopicReferenceSchema = new Schema(
 );
 
 TopicReferenceSchema
-.virtual('url')
-// .get ( => {
-//   //Not Sure What Goes Here Yet
-// });
+.virtual('name')
+.get(function(){
+  return this.topicName;
+});
 
 module.exports = mongoose.model('topicRef', TopicReferenceSchema);
