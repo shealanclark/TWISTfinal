@@ -23,9 +23,6 @@ router.get('/dashboard', auth.hasAuth, function(req, res, next){
 
 //GET create-session
 router.get('/dashboard/create-session', auth.hasAuth, session.getCreateSession);
-// router.get('/dashboard/create-session', auth.hasAuth, function(req, res, next){
-//   res.render('dashboard/create-session/create-session');
-// });
 
 //POST create-session
 router.post('/dashboard/create-session', auth.hasAuth, function(req, res, next){
@@ -33,12 +30,12 @@ router.post('/dashboard/create-session', auth.hasAuth, function(req, res, next){
 });
 
 //GET edit-session
-router.get('/dashboard/edit-session', auth.hasAuth, function(req, res, next){
+router.get('/dashboard/session-list/edit-session/:session_id', auth.hasAuth, function(req, res, next){
   res.render('dashboard/edit-session/edit-session');
 });
 
 //POST edit-session
-router.post('/dashboard/edit-session', auth.hasAuth, function(req, res, next){
+router.post('/dashboard/session-list/edit-session/:session_id', auth.hasAuth, function(req, res, next){
   res.redirect('/dashboard');
 });
 
@@ -54,12 +51,12 @@ router.post('/dashboard/add-attendee', auth.hasAuth, attendee.newAttendee);
 router.get('/dashboard/attendee-list', auth.hasAuth, attendee.list);
 
 //GET edit-attendee
-router.get('/dashboard/attendee-list/edit-attendee', auth.hasAuth, function(req, res, next){
+router.get('/dashboard/attendee-list/edit-attendee/:attendee_id', auth.hasAuth, function(req, res, next){
   res.render('dashboard/edit-attendee/edit-attendee');
 });
 
 //POST edit-attendee
-router.post('/dashboard/edit-attendee', auth.hasAuth, function(req, res, next){
+router.post('/dashboard/attendee-list/edit-attendee/:attendee_id', auth.hasAuth, function(req, res, next){
   res.redirect('/dashboard');
 });
 
@@ -72,7 +69,7 @@ router.get('/dashboard/add-room', auth.hasAuth, function(req, res, next){
 router.post('/dashboard/add-room', auth.hasAuth, room.addRoomPost);
 
 //GET edit-room
-router.get('/dashboard/edit-room', auth.hasAuth, function(req, res, next){
+router.get('/dashboard/room-list/edit-room/:room_id', auth.hasAuth, function(req, res, next){
   res.render('dashboard/edit-room/edit-room');
 });
 
@@ -80,7 +77,7 @@ router.get('/dashboard/edit-room', auth.hasAuth, function(req, res, next){
 router.get('/dashboard/room-list', auth.hasAuth, room.list);
 
 //POST edit-room
-router.post('/dashboard/edit-room', auth.hasAuth, function(req, res, next){
+router.post('/dashboard/room-list/edit-room/:room_id', auth.hasAuth, function(req, res, next){
   res.redirect('/dashboard');
 });
 
@@ -103,7 +100,7 @@ router.get('/dashboard/add-speaker', auth.hasAuth, function (req, res, next){
 router.post('/dashboard/add-speaker', auth.hasAuth, session.newSpeaker);
 
 //GET edit-speaker
-router.get('/dashboard/edit-speaker', auth.hasAuth, function (req, res, next){
+router.get('/dashboard/speaker-list/edit-speaker/:speaker_id', auth.hasAuth, function (req, res, next){
   res.render('dashboard/edit-speaker/edit-speaker');
 });
 
@@ -111,7 +108,7 @@ router.get('/dashboard/edit-speaker', auth.hasAuth, function (req, res, next){
 router.get('/dashboard/speaker-list', auth.hasAuth, session.speakerList);
 
 //POST edit-speaker
-router.post('/dashboard/edit-speaker', auth.hasAuth, function(req, res, next){
+router.post('/dashboard/edit-speaker/:speaker_id', auth.hasAuth, function(req, res, next){
   res.redirect('/dashboard');
 });
 
@@ -124,12 +121,12 @@ router.get('/dashboard/add-block', auth.hasAuth, function(req, res, next){
 router.post('/dashboard/add-block', auth.hasAuth, session.newBlock);
 
 //GET edit-block
-router.get('/dashboard/block-list/edit-block', auth.hasAuth, function (req, res, next){
+router.get('/dashboard/block-list/edit-block/:block_id', auth.hasAuth, function (req, res, next){
   res.render('dashboard/edit-block/edit-block');
 });
 
 //POST edit-block
-router.post('/dashboard/edit-block'), auth.hasAuth, function(req, res, next){
+router.post('/dashboard/block-list/edit-block/:block_id'), auth.hasAuth, function(req, res, next){
   res.redirect('/dashboard');
 }
 
