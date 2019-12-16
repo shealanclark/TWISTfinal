@@ -57,6 +57,13 @@ exports.newSpeaker=[
     }
 ]
 
+exports.getEditSpeaker=function(req,res,next){
+    return speaker.findById(req.params.speaker_id)
+    .then(speak=>{
+        res.render('dashboard/edit-speaker/edit-speaker',{speaker:speak});
+    });
+}
+
 exports.newBlock=[
     validator.sanitizeBody('blockNumber','blockStart','blockEnd').escape(),
 

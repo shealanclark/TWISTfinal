@@ -25,4 +25,10 @@ SpeakerSchema
   return this.topicId;
 });
 
+SpeakerSchema
+.virtual('fname')
+.get(function(){
+  return this.firstName;
+});
+
 module.exports = mongoose.model('speaker', SpeakerSchema);
