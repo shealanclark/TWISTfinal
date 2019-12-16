@@ -11,29 +11,28 @@ h2 Add Session
 div
   .form_container
     form(method='POST' action='')
-      label(for='name') Session Name*:
+      label(for='topic') Topic Name*:
       br
-      select(name='sessionName')
-      br
-      label(for='speaker') Speaker Name*:
-      br
-      select(name='speakerName')
+      select(name='topicName')
+        for topic in topics
+          option(value=topic._id) #{topic.name}
       br
       label(for='room') Room Number*:
       br
       select(name='roomNumber')
+        for room in rooms
+          option(value=room._id) #{room.info}
       br
       label(for='block') Time*:
       br
       select(name='blockId')
+        for block in blocks
+          option(value=block.number) #{block.info}
       br
     p * Required Information
       .scroll
       input(type='submit' value='Submit')
       input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")
-      for room in room_list
-        li
-          p #{room.info}
   .flex-container
     div
     div

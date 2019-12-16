@@ -1,9 +1,11 @@
 let session = require('../models/perSessionInfo');
 let speaker=require('../models/speaker');
-let topicRef=require('../models/topicReferenceTable');
+let topic=require('../models/topicReferenceTable');
 let block=require('../models/blockReferenceTable');
 let room=require('../models/roomReferenceTable');
 const validator = require('express-validator');
+
+var async = require('async');
 
 exports.new_session = [
     validator.body('roomNumber', 'topicId', 'speakerId', 'blockId', 'participants').isLength({min: 1}).trim(),
@@ -28,7 +30,7 @@ exports.newSpeaker=[
     (req,res,next)=>{
         const errors=validator.validationResult(req);
 
-        var newTopic=new topicRef({
+        var newTopic=new topic({
             topicName:req.body.topicName,
             topicDesc:req.body.topicDesc
         })
@@ -83,11 +85,20 @@ exports.newBlock=[
 ]
 
 exports.getCreateSession=function(req,res,next){
-    room.find()
-        .exec(function(err,list_rooms){
-            if(err){return next(err);}
-            res.render('dashboard/create-session/create-session',{room_list:list_rooms});
-        });
+    async.parallel({
+        topics: function(callback) {
+            topic.find(callback);
+        },
+        rooms: function(callback) {
+            room.find(callback);
+        },
+        blocks: function(callback) {
+            block.find(callback);
+        },
+    }, function(err,results){
+        if(err){return next(err);}
+        res.render('dashboard/create-session/create-session',{topics:results.topics,rooms:results.rooms,blocks:results.blocks});
+    });
 };
 
 exports.getEditBlocks=function(req,res,next){

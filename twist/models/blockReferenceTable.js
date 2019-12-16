@@ -11,9 +11,15 @@ var BlockReferenceSchema = new Schema(
 );
 
 BlockReferenceSchema
-.virtual('url')
-// .get ( => {
-//   Not sure what goes here yet
-// });
+.virtual('info')
+.get(function(){
+  return this.blockStart+' - '+this.blockEnd;
+});
+
+BlockReferenceSchema
+.virtual('number')
+.get(function(){
+  return this.blockNumber;
+});
 
 module.exports = mongoose.model('block', BlockReferenceSchema);
