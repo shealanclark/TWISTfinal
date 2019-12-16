@@ -22,7 +22,7 @@ SpeakerSchema
 SpeakerSchema
 .virtual('topic')
 .get(function(){
-  return this.topic;
+  return this.topicId;
 });
 
 module.exports = mongoose.model('speaker', SpeakerSchema);

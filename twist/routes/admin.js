@@ -7,7 +7,7 @@ let auth = require('../controllers/auth');
 let sess;
 
 // GET login
-router.get('/login', function(req, res, next) {
+router.get('/login', function(req, res, next){
   res.render('login/login', {title: 'Login'});
 });
 
