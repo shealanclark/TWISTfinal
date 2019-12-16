@@ -15,4 +15,10 @@ TopicReferenceSchema
   return this.topicName;
 });
 
-module.exports = mongoose.model('topicRef', TopicReferenceSchema);
+TopicReferenceSchema
+.virtual('desc')
+.get(function(){
+  return this.topicDesc;
+});
+
+module.exports = mongoose.model('topic', TopicReferenceSchema);

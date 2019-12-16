@@ -4,12 +4,12 @@ var topic = require('./topicReferenceTable');
 var Schema = mongoose.Schema;
 
 var SpeakerSchema = new Schema(
-  {//removed speakerId
+  {
 	lastName: {type: String, required: true},
 	firstName: {type: String, required: true},
 	email: {type: String, required: true},
 	phone: {type: String, required: true},
-	topicId: {type: Schema.Types.ObjectId,ref:'Topic',required: true},
+	topic: {type: Schema.Types.ObjectId, ref: 'topic', required: true},
   }
 );
 
@@ -20,15 +20,27 @@ SpeakerSchema
 });
 
 SpeakerSchema
-.virtual('topic')
-.get(function(){
-  return this.topicId;
-});
-
-SpeakerSchema
 .virtual('fname')
 .get(function(){
   return this.firstName;
+});
+
+SpeakerSchema
+.virtual('lname')
+.get(function(){
+  return this.lastName;
+});
+
+SpeakerSchema
+.virtual('mail')
+.get(function(){
+  return this.email;
+});
+
+SpeakerSchema
+.virtual('phon')
+.get(function(){
+  return this.phone;
 });
 
 module.exports = mongoose.model('speaker', SpeakerSchema);

@@ -58,11 +58,27 @@ exports.newSpeaker=[
 ]
 
 exports.getEditSpeaker=function(req,res,next){
-    return speaker.findById(req.params.speaker_id)
-    .then(speak=>{
-        res.render('dashboard/edit-speaker/edit-speaker',{speaker:speak});
+    async.parallel({
+        speaker: function(callback){
+            speaker.findById(req.params.speaker_id)
+                .populate('topic')
+                .exec(callback)
+        },
+        topic: function(callback){
+            topic.find({'speaker':req.params.speaker_id})
+                .exec(callback)
+        }
+    }, function(err,results){
+        if(err){return next(err);}
+        console.log(results.speaker)
+        console.log(results.topic)
+        res.render('dashboard/edit-speaker/edit-speaker',{speaker:results.speaker,topic:results.topic});
     });
 }
+// return speaker.findById(req.params.speaker_id)
+//     .then(speak=>{
+//         res.render('dashboard/edit-speaker/edit-speaker',{speaker:speak});
+//     });
 
 exports.newBlock=[
     validator.sanitizeBody('blockNumber','blockStart','blockEnd').escape(),
