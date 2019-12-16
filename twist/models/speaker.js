@@ -14,9 +14,15 @@ var SpeakerSchema = new Schema(
 );
 
 SpeakerSchema
-.virtual('info')
+.virtual('name')
 .get(function(){
-  return this.lastName+', '+this.firstName+' - '+topic.name;
+  return this.lastName+', '+this.firstName;
+});
+
+SpeakerSchema
+.virtual('topic')
+.get(function(){
+  return this.topic;
 });
 
 module.exports = mongoose.model('speaker', SpeakerSchema);
