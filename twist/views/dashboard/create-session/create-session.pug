@@ -1,6 +1,5 @@
 doctype html
 head
-  link(href='../models/roomReferenceTable.js')
   link(href='../../stylesheets/our.css' rel='stylesheet')
   meta(charset='utf-8')
   meta(name='keywords' content='Twist, Women, Technology, Aviaiton, Engineering, Science')
@@ -13,7 +12,7 @@ div
     form(method='POST' action='')
       label(for='topic') Topic Name*:
       br
-      select(name='topicName')
+      select(name='topicId')
         for topic in topics
           option(value=topic._id) #{topic.name}
       br
@@ -21,15 +20,15 @@ div
       br
       select(name='roomNumber')
         for room in rooms
-          option(value=room._id) #{room.info}
+          option(value=room.roomNumber) #{room.info}
       br
       label(for='block') Time*:
       br
-      select(name='blockId')
+      select(name='blockNumber')
         for block in blocks
-          option(value=block.number) #{block.info}
+          option(value=block.blockNumber) #{block.info}
       br
-    p * Required Information
+      p * Required Information
       .scroll
       input(type='submit' value='Submit')
       input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")

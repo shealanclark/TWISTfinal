@@ -25,9 +25,7 @@ router.get('/dashboard', auth.hasAuth, function(req, res, next){
 router.get('/dashboard/create-session', auth.hasAuth, session.getCreateSession);
 
 //POST create-session
-router.post('/dashboard/create-session', auth.hasAuth, function(req, res, next){
-  res.redirect('/dashboard');
-});
+router.post('/dashboard/create-session', auth.hasAuth, session.newSession);
 
 //GET edit-session
 router.get('/dashboard/session-list/edit-session/:session_id', auth.hasAuth, function(req, res, next){

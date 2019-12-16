@@ -7,8 +7,7 @@ var PerSessionSchema = new Schema(
     topicId: {type: String, ref: 'topicReferenceTable', required: true},
     blockNumber: {type: Number, ref: 'blockReferenceTable', required: true},
     roomNumber: {type: String, ref: 'roomReferenceTable', required: true},
-    speakerId: {type: String, ref: 'speaker', required: true},
-    participantListId: {type: String}
+    participantListId: {type: Schema.Types.ObjectId, ref: 'ParticipantList'}
   }		// Should this reference the participantList table?
 );//The name of the session is the topic.
 

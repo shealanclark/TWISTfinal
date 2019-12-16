@@ -7,20 +7,18 @@ const validator = require('express-validator');
 
 var async = require('async');
 
-exports.new_session = [
-    validator.body('roomNumber', 'topicId', 'speakerId', 'blockId', 'participants').isLength({min: 1}).trim(),
-    validator.sanitizeBody('roomNumber','topicId','speakerId','blockId','participants').escape(),
+exports.newSession = [
     (req, res, next) => {
         var newSession = new session({
         roomNumber: req.body.roomNumber,
         topicId: req.body.topicId,
-        speakerId: req.body.speakerId,
-        blockId: req.body.blockId,
-        participants: req.body.participants
+        blockNumber: req.body.blockNumber
+        //participants: req.body.participants
         });
         newSession.save(function(err){
             if (err) {return next(err);}
-        })
+        });
+        res.redirect('/dashboard');
     }
 ]
 

@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var BlockReferenceSchema = new Schema(
   {// We can use Mongo's randomly generated ID as an identity property
-    blockNumber: {type: Number, required: true, primarykey:true},
+    blockNumber: {type: Number, required: true},
     blockStart: {type: String, required: true},
     blockEnd: {type: String, required: true}
   }
