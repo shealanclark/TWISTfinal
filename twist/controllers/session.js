@@ -97,3 +97,11 @@ exports.getEditBlocks=function(req,res,next){
             res.render('dashboard/edit-block/block-list',{block_list:list_blocks});
         });
 };
+
+exports.speakerList=function(req,res,next){
+    speaker.find()
+        .exec(function(err,list_speaker){
+            if(err){return next(err);}
+            res.render('dashboard/edit-speaker/speaker-list',{speaker_list:list_speaker});
+        });
+};

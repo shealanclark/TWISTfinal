@@ -6,8 +6,8 @@ head
   meta(name='description' content='Twist website')
   meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-h2 Room List
-for Room in room_list
+h2 Speakers List
+for speaker in speaker_list
   li
-    p #{Room.info}
+    p #{speaker.info}
 input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")

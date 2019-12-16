@@ -107,6 +107,9 @@ router.get('/dashboard/edit-speaker', auth.hasAuth, function (req, res, next){
   res.render('dashboard/edit-speaker/edit-speaker');
 });
 
+//GET speaker-list
+router.get('/dashboard/speaker-list', auth.hasAuth, session.speakerList);
+
 //POST edit-speaker
 router.post('/dashboard/edit-speaker', auth.hasAuth, function(req, res, next){
   res.redirect('/dashboard');
