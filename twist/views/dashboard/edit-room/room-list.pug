@@ -17,13 +17,13 @@ table
     tr
   tbody
     for Room in room_list
-      tr(id=room.id)
+      tr(id=Room.id)
         td
-          span #{room.name}
+          span #{Room.num}
         td
-          span #{room.capacity}
+          span #{Room.capacity}
         td
-          a(href='/dashboard/room-list/edit-room/' + room.id) Edit
+          a(href='/dashboard/room-list/edit-room/' + Room.id) Edit
         td
           button(onClick='') Delete
 input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")

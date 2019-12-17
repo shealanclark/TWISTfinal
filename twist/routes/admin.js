@@ -67,9 +67,7 @@ router.get('/dashboard/add-room', auth.hasAuth, function(req, res, next){
 router.post('/dashboard/add-room', auth.hasAuth, room.addRoomPost);
 
 //GET edit-room
-router.get('/dashboard/room-list/edit-room/:room_id', auth.hasAuth, function(req, res, next){
-  res.render('dashboard/edit-room/edit-room');
-});
+router.get('/dashboard/room-list/edit-room/:room_id', auth.hasAuth, room.getEditRoom);
 
 //GET room-list
 router.get('/dashboard/room-list', auth.hasAuth, room.list);

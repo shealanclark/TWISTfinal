@@ -1,5 +1,6 @@
 let Room=require('../models/roomReferenceTable');
 const validator = require('express-validator');
+var async = require('async');
 
 exports.addRoomPost = [
   validator.body('roomNumber', 'capacity').isLength({min: 1, max: 10}).trim(),
@@ -45,3 +46,15 @@ exports.list=function(req,res,next){
             res.render('dashboard/edit-room/room-list',{room_list:list_rooms});
         });
 };
+
+exports.getEditRoom = function(req, res, next){
+  async.parallel({
+    Room: function(callback){
+      Room.findById(req.params.room_id)
+        .exec(callback);
+    }
+  }, function(err, results){
+    if (err){return next(err);}
+    res.render('dashboard/edit-room/edit-room', {Room: results.Room});
+  });
+}
