@@ -7,23 +7,24 @@ head
   meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
 h2 Speakers List
-table
-  thead
-    tr
-      th Name
-      th Topic
-      th Edit
-      th Delete
-    tr
-  tbody
-    for speaker in speaker_list
-      tr(id=speaker.id)
-        td
-          span #{speaker.name}
-        td
-          span #{speaker.topic}
-        td
-          a(href='/dashboard/speaker-list/edit-speaker/' + speaker.id) Edit
-        td
-          button(onClick='') Delete
-input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")
+.descpara
+  table
+    thead
+      tr
+        th Name
+        th Topic
+        th Edit
+        th Delete
+      tr
+    tbody
+      for speaker in speaker_list
+        tr(id=speaker.id)
+          td
+            span #{speaker.name}
+          td
+            span #{speaker.topic}
+          td
+            a(href='/dashboard/speaker-list/edit-speaker/' + speaker.id) Edit
+          td
+            button#submitbutton(onClick='') Delete
+  input#submitbutton(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")

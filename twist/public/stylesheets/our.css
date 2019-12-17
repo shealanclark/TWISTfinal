@@ -19,6 +19,7 @@
     background-color: #000;
     overflow: hidden;
     display: block;
+    color: white;
 }
 
 .sign_in_bar a{

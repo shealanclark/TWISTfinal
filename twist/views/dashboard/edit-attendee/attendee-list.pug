@@ -7,20 +7,21 @@ head
   meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
 h2 Attendees
-table
-  thead
-    tr
-      th Name
-      th Edit
-      th Delete
-    tr
-  tbody
-    for people in people_list
-      tr(id=people.id)
-        td
-          span #{people.name}
-        td
-          a(href='/dashboard/people-list/edit-people/' + people.id) Edit
-        td
-          button(onClick='') Delete
-input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")
+.descpara
+  table
+    thead
+      tr
+        th Name
+        th Edit
+        th Delete
+      tr
+    tbody
+      for people in people_list
+        tr(id=people.id)
+          td
+            span #{people.name}
+          td
+            a(href='/dashboard/people-list/edit-people/' + people.id) Edit
+          td
+            button#submitbutton(onClick='') Delete
+input#submitbutton(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")

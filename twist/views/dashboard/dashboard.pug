@@ -6,28 +6,33 @@ head
   meta(name='description' content='Twist website')
   meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-.navbar
-  .dropdown
-    p Speakers
-    .dropdown_content
-      a(href='dashboard/add-speaker/') Add Speaker
-      a(href='dashboard/speaker-list/') Edit Speaker
-  .dropdown
-    p Rooms
-    .dropdown_content
-      a(href='dashboard/add-room/') Add Room
-      a(href='dashboard/room-list/') Edit Room
-  .dropdown
-    p Attendees
-    .dropdown_content
-      a(href='dashboard/add-attendee/') Add Attendee
-      a(href='dashboard/attendee-list/') Edit Attendee
-  .dropdown
-    p Blocks
-    .dropdown_content
-      a(href='dashboard/add-block/') Add Block
-      a(href='dashboard/block-list') Edit Block
-  a(href='/logout') Log Out
+a.sign_in_bar(href='/logout') Log Out
+.descpara
+  .navbar
+    .dropdown
+      p Speakers
+      .dropdown_content
+        a(href='dashboard/add-speaker/') Add Speaker
+        a(href='dashboard/speaker-list/') Edit Speaker
+    .dropdown
+      p Rooms
+      .dropdown_content
+        a(href='dashboard/add-room/') Add Room
+        a(href='dashboard/room-list/') Edit Room
+    .dropdown
+      p Attendees
+      .dropdown_content
+        a(href='dashboard/add-attendee/') Add Attendee
+        a(href='dashboard/attendee-list/') Edit Attendee
+    .dropdown
+      p Blocks
+      .dropdown_content
+        a(href='dashboard/add-block/') Add Block
+        a(href='dashboard/block-list') Edit Block
+  
 #schedule
-input(type='button' value='Add Session' onclick="window.location.href = '/dashboard/create-session'")
-input(type = 'button' value = 'Edit Session' onclick = "window.location.href = '/dashboard/edit-session'")
+br
+br
+br
+input#submitbutton(type='button' value='Add Session' onclick="window.location.href = '/dashboard/create-session'")
+input#submitbutton(type = 'button' value = 'Edit Session' onclick = "window.location.href = '/dashboard/edit-session'")
