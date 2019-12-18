@@ -12,9 +12,27 @@ var PerSessionSchema = new Schema(
 );//The name of the session is the topic.
 
 PerSessionSchema
-.virtual('url')
-// .get ( => {
-//   //Not sure what we're returning yet
-// });
+.virtual('tId')
+.get(function(){
+  return this.topicId;
+});
+
+PerSessionSchema
+.virtual('bNumber')
+.get(function(){
+  return this.blockNumber;
+});
+
+PerSessionSchema
+.virtual('rNumber')
+.get(function(){
+  return this.roomNumber;
+});
+
+PerSessionSchema
+.virtual('plId')
+.get(function(){
+  return this.participantListId;
+});
 
 module.exports = mongoose.model('session', PerSessionSchema);
