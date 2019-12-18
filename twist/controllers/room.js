@@ -58,3 +58,16 @@ exports.getEditRoom = function(req, res, next){
     res.render('dashboard/edit-room/edit-room', {Room: results.Room});
   });
 }
+
+exports.updateRoom = function(req, res, next){
+  var room = new Room(
+  {
+    roomNumber: req.body.roomNumber,
+    capacity: req.body.capacity,
+    _id: req.params.room_id
+  });
+  Room.findByIdAndUpdate(req.params.room_id, room, function(err){
+    if (err){return next(err)}
+    res.redirect('/dashboard/room-list');
+  });
+}

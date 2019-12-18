@@ -71,9 +71,7 @@ router.get('/dashboard/room-list/edit-room/:room_id', auth.hasAuth, room.getEdit
 router.get('/dashboard/room-list', auth.hasAuth, room.list);
 
 //POST edit-room
-router.post('/dashboard/room-list/edit-room/:room_id', auth.hasAuth, function(req, res, next){
-  res.redirect('/dashboard');
-});
+router.post('/dashboard/room-list/edit-room/:room_id', auth.hasAuth, room.updateRoom);
 
 //GET print-schedule
 router.get('/dashboard/print-schedule', auth.hasAuth, function(req, res, next){

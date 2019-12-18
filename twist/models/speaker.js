@@ -9,7 +9,7 @@ var SpeakerSchema = new Schema(
 	firstName: {type: String, required: true},
 	email: {type: String, required: true},
 	phone: {type: String, required: true},
-	topic: {type: Schema.Types.ObjectId, ref: 'topic', required: true},
+	topic: {type: Schema.ObjectId, ref: 'topic', required: true},
   }
 );
 

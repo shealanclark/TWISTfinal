@@ -132,6 +132,7 @@ exports.blockList=function(req,res,next){
 
 exports.speakerList=function(req,res,next){
     speaker.find()
+        .populate('topic')
         .exec(function(err,list_speaker){
             if(err){return next(err);}
             res.render('dashboard/edit-speaker/speaker-list',{speaker_list:list_speaker});
