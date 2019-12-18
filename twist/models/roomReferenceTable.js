@@ -21,4 +21,5 @@ RoomReferenceSchema
   return this.capacity;
 });
 
+
 module.exports = mongoose.model('Room', RoomReferenceSchema);

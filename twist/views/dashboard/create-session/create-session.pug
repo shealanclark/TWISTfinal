@@ -20,13 +20,13 @@ div
       br
       select(name='roomNumber')
         for room in rooms
-          option(value=room.roomNumber) #{room.info}
+          option(value=room.roomNumber) #{room.num+' - '+room.cap}
       br
       label(for='block') Time*:
       br
       select(name='blockNumber')
         for block in blocks
-          option(value=block.blockNumber) #{block.info}
+          option(value=block.blockNumber) #{block.start+' - '+block.end}
       br
       p * Required Information
       .scroll
