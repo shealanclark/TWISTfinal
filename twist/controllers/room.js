@@ -71,3 +71,10 @@ exports.updateRoom = function(req, res, next){
     res.redirect('/dashboard/room-list');
   });
 }
+
+// exports.deleteRoom = function(req, res, next){
+  // Room.findByIdAndRemove(req.params.room_id, function deleteRoom(err){
+    // if (err){return next(err);}
+    // res.redirect('/dashboard/room-list');
+  // });
+// }
