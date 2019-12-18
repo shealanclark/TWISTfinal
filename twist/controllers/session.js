@@ -122,7 +122,7 @@ exports.getCreateSession=function(req,res,next){
     });
 };
 
-exports.getEditBlocks=function(req,res,next){
+exports.blockList=function(req,res,next){
     block.find()
         .exec(function(err,list_blocks){
             if(err){return next(err);}
@@ -137,3 +137,15 @@ exports.speakerList=function(req,res,next){
             res.render('dashboard/edit-speaker/speaker-list',{speaker_list:list_speaker});
         });
 };
+
+exports.getEditBlock = function(req, res, next){
+  async.parallel({
+    block: function(callback){
+      block.findById(req.params.block_id)
+        .exec(callback);
+    }
+  }, function(err, results){
+    if(err){return next(err);}
+    res.render('dashboard/edit-block/edit-block', {block: results.block});
+  });
+}

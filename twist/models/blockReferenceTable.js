@@ -11,9 +11,15 @@ var BlockReferenceSchema = new Schema(
 );
 
 BlockReferenceSchema
-.virtual('info')
+.virtual('start')
 .get(function(){
-  return this.blockStart+' - '+this.blockEnd;
+  return this.blockStart;
+});
+
+BlockReferenceSchema
+.virtual('end')
+.get(function(){
+  return this.blockEnd;
 });
 
 BlockReferenceSchema

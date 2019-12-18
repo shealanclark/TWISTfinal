@@ -113,9 +113,7 @@ router.get('/dashboard/add-block', auth.hasAuth, function(req, res, next){
 router.post('/dashboard/add-block', auth.hasAuth, session.newBlock);
 
 //GET edit-block
-router.get('/dashboard/block-list/edit-block/:block_id', auth.hasAuth, function (req, res, next){
-  res.render('dashboard/edit-block/edit-block');
-});
+router.get('/dashboard/block-list/edit-block/:block_id', auth.hasAuth, session.getEditBlock);
 
 //POST edit-block
 router.post('/dashboard/block-list/edit-block/:block_id'), auth.hasAuth, function(req, res, next){
@@ -123,6 +121,6 @@ router.post('/dashboard/block-list/edit-block/:block_id'), auth.hasAuth, functio
 }
 
 //GET block-list
-router.get('/dashboard/block-list', auth.hasAuth, session.getEditBlocks);
+router.get('/dashboard/block-list', auth.hasAuth, session.blockList);
 
 module.exports=router;
