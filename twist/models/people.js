@@ -13,7 +13,7 @@ var PeopleSchema = new Schema(
     topic4: {type: Schema.ObjectId, ref: 'topic', required: true},
     topic5: {type: Schema.ObjectId, ref: 'topic', required: true},
     topic6: {type: Schema.ObjectId, ref: 'topic', required: true},
-    highschoolName: {type: Schema.ObjectId, ref: 'highschool'},
+    highschool: {type: Schema.ObjectId, ref: 'highschool'},
     email: {type: String, required: true},
     address: {type: String, required: true},
     city: {type: String, required: true},

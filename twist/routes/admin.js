@@ -112,9 +112,7 @@ router.post('/dashboard/add-block', auth.hasAuth, session.newBlock);
 router.get('/dashboard/block-list/edit-block/:block_id', auth.hasAuth, session.getEditBlock);
 
 //POST edit-block
-router.post('/dashboard/block-list/edit-block/:block_id'), auth.hasAuth, function(req, res, next){
-  res.redirect('/dashboard');
-}
+router.post('/dashboard/block-list/edit-block/:block_id', auth.hasAuth, session.updateBlock);
 
 //GET block-list
 router.get('/dashboard/block-list', auth.hasAuth, session.blockList);

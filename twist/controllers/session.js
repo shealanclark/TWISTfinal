@@ -150,3 +150,17 @@ exports.getEditBlock = function(req, res, next){
     res.render('dashboard/edit-block/edit-block', {block: results.block});
   });
 }
+
+exports.updateBlock = function(req, res, next){
+  var newBlock = new block(
+  {
+    blockNumber:req.body.blockNumber,
+    blockStart:req.body.blockStart,
+    blockEnd:req.body.blockEnd,
+    _id: req.params.block_id
+  });
+  block.findByIdAndUpdate(req.params.block_id, newBlock, function(err){
+    if (err){return next(err)}
+    res.redirect('/dashboard/block-list');
+  });
+}
