@@ -27,9 +27,51 @@ var PeopleSchema = new Schema(
 );
 
 PeopleSchema
-.virtual('url')
-//.get ( => {
-  //Not sure what goes here yet
-//});
+.virtual('name')
+.get(function(){
+  return this.firstName + ' ' + this.lastName;
+});
+
+PeopleSchema
+.virtual('fname')
+.get(function(){
+  return this.firstName;
+});
+
+PeopleSchema
+.virtual('lname')
+.get(function(){
+  return this.lastName;
+});
+
+PeopleSchema
+.virtual('addy')
+.get(function(){
+  return this.address;
+});
+
+PeopleSchema
+.virtual('sitty')
+.get(function(){
+  return this.city;
+});
+
+PeopleSchema
+.virtual('zoop')
+.get(function(){
+  return this.zip;
+});
+
+PeopleSchema
+.virtual('school')
+.get(function(){
+  return this.highschoolName;
+});
+
+PeopleSchema
+.virtual('mail')
+.get(function(){
+  return this.email;
+});
 
 module.exports=mongoose.model('people', PeopleSchema);

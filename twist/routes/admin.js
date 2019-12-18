@@ -49,9 +49,7 @@ router.post('/dashboard/add-attendee', auth.hasAuth, attendee.newAttendee);
 router.get('/dashboard/attendee-list', auth.hasAuth, attendee.list);
 
 //GET edit-attendee
-router.get('/dashboard/attendee-list/edit-attendee/:attendee_id', auth.hasAuth, function(req, res, next){
-  res.render('dashboard/edit-attendee/edit-attendee');
-});
+router.get('/dashboard/attendee-list/edit-attendee/:people_id', auth.hasAuth, attendee.getEditAttendee);
 
 //POST edit-attendee
 router.post('/dashboard/attendee-list/edit-attendee/:attendee_id', auth.hasAuth, function(req, res, next){

@@ -1,5 +1,6 @@
 let people=require('../models/people');
 const {sanitizeBody}=require('express-validator');
+var async = require('async');
 
 exports.showRegister=function(req,res,next){
     res.render('register/register')
@@ -50,3 +51,15 @@ exports.list=function(req, res, next){
             res.render('dashboard/edit-attendee/attendee-list',{people_list:list_people});
         });
 };
+
+exports.getEditAttendee = function(req, res, next){
+  async.parallel({
+    people: function(callback){
+      people.findById(req.params.people_id)
+        .exec(callback);
+    }
+  }, function(err, results){
+    if (err){return next(err);}
+    res.render('dashboard/edit-attendee/edit-attendee', {people: results.people});
+  });
+}

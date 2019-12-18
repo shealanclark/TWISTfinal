@@ -15,19 +15,19 @@ body
           p
             br
             label(for='fName') First Name:
-            input#fName(type='text' name='firstName' placeholder='First Name' required='')
+            input#fName(type='text' name='firstName' value=people.fname required='')
           p
             label(for='lName') Last Name:
-            input#lName(type='text' name='lastName' placeholder='Last Name' required='')
+            input#lName(type='text' name='lastName' value=people.lname required='')
           p
             label(for='email') Email:
-            input#email(type='email' name='email' placeholder='example@domain.com' required='')
+            input#email(type='email' name='email' value=people.mail required='')
           p
             label(for='address') Address:
-            input#address(type='text' name='address' placeholder='Address' required='')
+            input#address(type='text' name='address' value=people.addy required='')
           p
             label(for='city') City:
-            input#city(type='text' name='city' placeholder='City' required='')
+            input#city(type='text' name='city' value=people.sitty required='')
           p
             label(for='state') State:
             select(name='state')
@@ -84,10 +84,10 @@ body
               option(value='WY') Wyoming
           p
             label(for='zip') Zip:
-            input#zip(type='text' name='zip' placeholder='ex. 67401' required='')
+            input#zip(type='text' name='zip' value=people.zoop required='')
           p
             label(for='school') School:
-            input#school(type='text' name='school' required='')
+            input#school(type='text' name='school' value=people.skool required='')
 
           br
           label(for='type') Type:
