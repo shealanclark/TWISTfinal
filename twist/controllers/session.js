@@ -80,6 +80,22 @@ exports.getEditSpeaker=function(req,res,next){
 //         res.render('dashboard/edit-speaker/edit-speaker',{speaker:speak});
 //     });
 
+exports.updateSpeaker = function(req, res, next){
+  var newSpeaker = new speaker(
+  {
+    firstName:req.body.firstName,
+    lastName:req.body.lastName,
+    email:req.body.email,
+    phone:req.body.phone,
+    _id: req.params.speaker_id
+  });
+  
+  speaker.findByIdAndUpdate(req.params.speaker_id, newSpeaker, function(err){
+    if (err){return next(err)}
+    res.redirect('/dashboard/speaker-list');
+  });
+}
+
 exports.newBlock=[
     validator.sanitizeBody('blockNumber','blockStart','blockEnd').escape(),
 

@@ -96,9 +96,7 @@ router.get('/dashboard/speaker-list/edit-speaker/:speaker_id', auth.hasAuth, ses
 router.get('/dashboard/speaker-list', auth.hasAuth, session.speakerList);
 
 //POST edit-speaker
-router.post('/dashboard/edit-speaker/:speaker_id', auth.hasAuth, function(req, res, next){
-  res.redirect('/dashboard');
-});
+router.post('/dashboard/speaker-list/edit-speaker/:speaker_id', auth.hasAuth, session.updateSpeaker);
 
 //GET add-block
 router.get('/dashboard/add-block', auth.hasAuth, function(req, res, next){
