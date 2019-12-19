@@ -1,6 +1,8 @@
 # twist
 The team who collaborated with me on this project are Eric Webb, Alex Windhorst, Westly Elliott, and Jon Martin.
 
+The site's purpose is to provide a place for students, parents, and educators to register for the TWIST event that is being held at K-state Polytechnic. The site also provides a way for the events organizer to edit, add, and delete registraints/rooms/sessions. Other features of the site included being able to create a schedule for the event and print it off.
+
 The main learning objective for this project was for us learn how to take everything that we have collectively learned over the semester from various classes and create a dynamic website. This includes learning how to create a database, coding the server-side of the web application, and how to use design to make the application the most appealing and user friendly.
 
 What I contributed to this project was the design element of it. For starters, I created the initial layout and helped design it's functionality. Eric Webb put together the homepage and registration page based on my layout. I then finished all of the styling from then on out for all of the pages. Eric also made a carousel with buttons for the homepage, but I changed the carousel to go through the pictures automatically.
