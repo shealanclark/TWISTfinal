@@ -7,23 +7,24 @@ head
   meta(name='author' content='Eric Webb, Shea Clark, Wesley Elliott, Jon Martin, Alex Windhorst')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
 h2 Room List
-table
-  thead
-    tr
-      th Name
-      th Capacity
-      th Edit
-      th Delete
-    tr
-  tbody
-    for Room in room_list
-      tr(id=Room.id)
-        td
-          span #{Room.num}
-        td
-          span #{Room.capacity}
-        td
-          a(href='/dashboard/room-list/edit-room/' + Room.id) Edit
-        td
-          button(onClick='') Delete
-input(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")
+.descpara
+  table
+    thead
+      tr
+        th Name
+        th Capacity
+        th Edit
+        th Delete
+      tr
+    tbody
+      for Room in room_list
+        tr(id=Room.id)
+          td
+            span #{Room.num}
+          td
+            span #{Room.capacity}
+          td
+            a#submitbutton(href='/dashboard/room-list/edit-room/' + Room.id) Edit
+          td
+            button#submitbutton(onClick='') Delete
+input#submitbutton(type='button' value='Back to Dashboard' onclick="window.location.href = '/dashboard'")
