@@ -21,7 +21,7 @@ h2 Attendees
           td
             span #{people.name}
           td
-            a(href='/dashboard/attendee-list/edit-attendee/' + people.id) Edit
+            a#submitbutton(href='/dashboard/attendee-list/edit-attendee/' + people.id) Edit
           td
             button#submitbutton(onClick='') Delete
-input#submitbutton(type='button' value='Back to Home' onclick="window.location.href = '/dashboard'")
+input#submitbutton(type='button' value='Back to Dashboard' onclick="window.location.href = '/dashboard'")
