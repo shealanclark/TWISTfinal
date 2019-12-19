@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var compression = require('compression');
+var helmet = require('helmet');
 
 var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
@@ -26,6 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(compression());		// Compresses all routes for faster loading
+app.use(helmet());			// Protection from common web vulnerabilities
 
 app.use('/', usersRouter);
 app.use('/', adminRouter);
